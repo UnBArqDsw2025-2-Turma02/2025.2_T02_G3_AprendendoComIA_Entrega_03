@@ -7,8 +7,9 @@
 - **Módulo Notação UML:**
 
 - **Gofs Criacionais**
-  - [2. Metodologia](modelagemEstatica/metodologia.md)
-    - [2.1. ... ](modelagemEstatica/.md)
+  - [2. Metodologia](gofOrgacionais/metodologia.md)
+    - [2.1. Prototype](gofOrgacionais/singleton.md)
+    - [2.2. Singleton](gofOrgacionais/singleton.md)
 
 - **Gofs Estruturais**
   - [3. Metodologia](modelagemEstatica/metodologia.md)
