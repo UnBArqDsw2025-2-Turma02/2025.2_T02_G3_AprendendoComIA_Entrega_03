@@ -17,7 +17,7 @@
     
 - **Gofs Comportamentais**
   - [4. Metodologia](modelagemEstatica/metodologia.md)
-    - [4.1. ... ](modelagemEstatica/.md)
+    - [4.1. Iterator ](modelagemEstatica/.md)
 
 - **Participação dos Integrantes**
   - [5. Participação](participacaoIntegrantes/integrantes.md)
