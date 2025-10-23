@@ -6,7 +6,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 # Participações Base 
 
-## Modelagem Estática (Foco_1)
+## GoF Criacional (Foco 1)
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
@@ -17,7 +17,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Componentes e Modelagem do Diagrama de Classes | Excelente | [Diagrama de Componentes](modelagemEstatica/diagramaDeComponentes.md), [Diagrama de Classes](modelagemEstatica/diagramaDeClasses.md) |
 | [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Componentes | Excelente | [Diagrama de Componentes](modelagemEstatica/diagramaDeComponentes.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem do Diagrama de Implementação| Excelente| [Diagrama de Implementação](modelagemEstatica/diagramaDeImplantacao.md)|
+| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Prototype" | Excelente| [Prototype](gofCriacionais/prototype.md)|
 | [Vitor Bessa](https://github.com/Bessazs) | | | |
 | [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Implementação| Excelente | [Diagrama de Implementação](modelagemEstatica/diagramaDeImplantacao.md)|
 | [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Implementação| Excelente | [Diagrama de Implementação](modelagemEstatica/diagramaDeImplantacao.md)|
@@ -40,7 +40,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 ---
 
-## Modelagem Dinâmica (Foco_2)
+## GoF Estrutural (Foco_2)
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
@@ -51,7 +51,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Estados | Excelente | [Diagrama de Estados](modelagemDinamica/diagramaDeEstados.md) |
 | [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Estados | Excelente | [Diagrama de Estados](modelagemDinamica/diagramaDeEstados.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem do Diagrama de Comunicação| Excelente| [Diagrama de Comunicação](modelagemDinamica/diagramaDeComunicacao.md)|
+| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Adapter" e "Facade" | Excelente| [Adapter](gofEstruturais/adapter.md), [Facade](gofEstruturais/facade.md)|
 | [Vitor Bessa](https://github.com/Bessazs) | | | |
 | [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Estados| Excelente | [Diagrama de Estados](modelagemDinamica/diagramaDeEstados.md) |
 | [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Comunicação | Excelente | [Diagrama de Comunicação](modelagemDinamica/diagramaDeComunicacao.md) |
@@ -74,7 +74,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 ---
 
-## Modelagem Organizacional (Foco_3)
+## GoF Comportamental (Foco_3)
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
@@ -85,7 +85,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Casos de Uso | Excelente | [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
 | [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Casos de Uso | Excelente | [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | |  |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Revisão do Diagrama de Caso de Uso| Excelente| [Diagrama de Caso de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md)|
+| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Mediator" | Excelente| [Mediator](gofComportamentais/mediator.md)|
 | [Vitor Bessa](https://github.com/Bessazs) | | | |
 | [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Casos de Uso | Excelente |[Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
 | [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Casos de Uso | Excelente |[Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |

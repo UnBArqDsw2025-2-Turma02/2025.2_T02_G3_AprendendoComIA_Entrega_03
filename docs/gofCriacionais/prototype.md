@@ -1,4 +1,4 @@
-# Adapter
+# Prototype
 
 ---
 ## Sumário
@@ -11,7 +11,7 @@
 
 ## Introdução
 
-Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Adapter__ é definido como uma maneira de fazer duas interfaces incompatíveis trabalharem juntas, ou seja, ele atua como um tradutor entre duas interfaces diferentes. O __Adapter__ envolve o objeto existente e fornece uma interface compatível com o cliente facilitando a integração de classes incompatíveis sem modificar seu código original.
+Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Prototype__ é especificar os tipos de objetos a serem criados usando uma instância-protótipo e criar novos objetos pela cópia desse protótipo.<br>Nesse sentido, o padrão __Prototype__ utiliza uma instância de um objeto, conhecida como protótipo, como base para criar novos objetos, ou seja, em vez de criar objetos a partir do zero, novos objetos são criados clonando ou copiando o protótipo.
 
 ---
 
@@ -19,10 +19,13 @@ Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padr�
 
 
 ---
+
 ## Referências Bibliográficas
 
 - FREEMAN, Eric et al. __Use A Cabeça Padrões E Projetos.__ Rio de Janeiro: Alta Books, 2007.
 - GAMMA, E. et al. __Padrões de projeto : soluções reutilizáveis de software orientado a objetos.__ Porto Alegre: Bookman, 2006.
+
+‌
 
 ---
 

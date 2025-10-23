@@ -1,4 +1,4 @@
-# Adapter
+# Facade
 
 ---
 ## Sumário
@@ -11,7 +11,7 @@
 
 ## Introdução
 
-Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Adapter__ é definido como uma maneira de fazer duas interfaces incompatíveis trabalharem juntas, ou seja, ele atua como um tradutor entre duas interfaces diferentes. O __Adapter__ envolve o objeto existente e fornece uma interface compatível com o cliente facilitando a integração de classes incompatíveis sem modificar seu código original.
+Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Facade__ é descrito como uma entidade que fornece uma interface unificada e simplificada para um conjunto de interfaces em um subsistema, facilitando o uso do sistema ao esconder sua complexidade. <br>Basicamente, o __Facade__ atua como uma fachada que oferece uma interface mais fácil de usar permitindo que os clientes interajam com o sistema através de um ponto único de acesso, sem precisar conhecer detalhes internos ou múltiplas interfaces complexas.
 
 ---
 

@@ -1,4 +1,4 @@
-# Adapter
+# Mediator
 
 ---
 ## Sumário
@@ -11,7 +11,7 @@
 
 ## Introdução
 
-Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Adapter__ é definido como uma maneira de fazer duas interfaces incompatíveis trabalharem juntas, ou seja, ele atua como um tradutor entre duas interfaces diferentes. O __Adapter__ envolve o objeto existente e fornece uma interface compatível com o cliente facilitando a integração de classes incompatíveis sem modificar seu código original.
+Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Mediator__ é apresentado como um modo de facilitar a comunicação entre objetos que precisam interagir, evitando que eles se comuniquem diretamente uns com os outros.<br>Dessa forma, todos os objetos enviam suas mensagens para um objeto mediador, que coordena as interações, reduzindo a dependência entre os objetos e tornando o sistema mais flexível e de fácil manutenção.
 
 ---
 
@@ -19,6 +19,7 @@ Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padr�
 
 
 ---
+
 ## Referências Bibliográficas
 
 - FREEMAN, Eric et al. __Use A Cabeça Padrões E Projetos.__ Rio de Janeiro: Alta Books, 2007.
