@@ -71,7 +71,59 @@ Observação: Diferentemente do Singleton “clássico” (com construtor privad
 
 No Spring, o escopo padrão de beans é `singleton`. Isso significa que, para uma aplicação, haverá uma instância única de cada bean mantida pelo ApplicationContext. Não é necessário escrever código com `getInstance()`; basta anotar classes com `@Service`, `@Component`, `@Configuration`, ou expor métodos `@Bean`.
 
+### Exemplos representativos
 
+- OpenAIService (@Service): um serviço de integração com OpenAI, ideal como singleton para reutilizar clientes HTTP, configuração e controle de taxa (rate limiting) em um só lugar.
+- LLMConfiguration (@Configuration) + método @Bean llmProvider(...): fábrica que cria uma única instância de LLMProvider conforme a propriedade app.llm.provider (openai | gemini | mock). Essa instância é compartilhada por todo o aplicativo.
+
+---
+
+## Como usar (escopos de bean)
+
+- O padrão no Spring é singleton. Não é preciso declarar explicitamente.
+- Para mudar o escopo (ex.: prototype), pode-se usar @Scope("prototype") sobre a classe/bean, mas só faça isso se houver um motivo forte (objetos com estado mutável, por exemplo).
+- Exemplo de definição de bean singleton via @Bean (o padrão já é singleton):
+
+java
+@Configuration
+public class LLMConfiguration {
+    @Bean
+    public LLMProvider llmProvider(OpenAIService openAIService) {
+        // devolve uma única instância compartilhada
+        return new OpenAIAdapter(openAIService);
+    }
+}
+
+
+---
+
+## Testes
+
+Validações típicas de Singleton no contexto Spring:
+- Verificar que duas injeções do mesmo bean referenciam a mesma instância (mesmo System.identityHashCode).
+- Em testes com Spring Boot (@SpringBootTest), pedir o bean duas vezes do ApplicationContext e comparar referências.
+
+No repositório, há testes de configuração (ex.: LLMConfigurationTest) que garantem a criação e seleção do bean LLMProvider via propriedade de configuração. Embora não foquem diretamente em “uma única instância”, eles exercitam o ponto global de acesso do Singleton gerenciado pelo container.
+
+---
+
+## Vantagens e Desvantagens
+
+- Vantagens
+  - Controle centralizado do ciclo de vida e dependências.
+  - Economia de recursos ao reutilizar instâncias pesadas (clientes HTTP, pools, etc.).
+  - Simplicidade de uso com injeção de dependências.
+- Desvantagens
+  - Estado global mal utilizado pode causar efeitos colaterais; prefira imutabilidade nos beans.
+  - Em cenários altamente concorrentes, cuidado com dados de instância mutáveis.
+
+---
+
+## Conclusão
+
+O AILinguo adota o padrão Singleton por meio do contêiner IoC do Spring. Com isso, serviços e fábricas críticos (como OpenAIService e o bean LLMProvider) possuem uma única instância global, reduzindo acoplamento e custo de criação, e simplificando a injeção e o gerenciamento do ciclo de vida.
+
+---
 
 ## Bibliografia
 
@@ -90,3 +142,4 @@ No Spring, o escopo padrão de beans é `singleton`. Isso significa que, para um
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Visão geral do Singleton no AILinguo: IoC do Spring, mapeamento de beans e contexto | [Leonardo de Melo Lima](https://github.com/leozinlima) | 23/10/2025 | | | |
+| `1.1` |Exemplos representativos, Escopo de bean, testes e conclusão do Singleton no AILíguo | [Vítor Bessa](https://github.com/Bessaz) | 23/10/2025 | | | |
