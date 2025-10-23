@@ -16,7 +16,7 @@
     
 - **Gofs Comportamentais**
   - [Iterator](gofComportamentais/Iterator.md)
-  - [Mediator](gofComportamentais/mediator.md)
+  - [Observer](gofComportamentais/observer.md)
 
 - **Participação dos Integrantes**
   - [Participação](participacaoIntegrantes/integrantes.md)
