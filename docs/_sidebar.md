@@ -16,8 +16,8 @@
     - [3.1. Adapter. ](modelagemEstatica/.md)
     
 - **Gofs Comportamentais**
-  - [4. Metodologia](modelagemEstatica/metodologia.md)
-    - [4.1. Iterator ](modelagemEstatica/.md)
+  - [4. Metodologia](gofCompotamentais/metodologia.md)
+    - [4.1. Iterator ](gofCompotamentais/Iterator.md)
 
 - **Participação dos Integrantes**
   - [5. Participação](participacaoIntegrantes/integrantes.md)
