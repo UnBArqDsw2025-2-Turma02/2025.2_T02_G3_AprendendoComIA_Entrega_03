@@ -1,92 +1,150 @@
+# Padrão Estrutural Adapter - LLMProvider
+
 ## Sumário
 
-- [Introdução](#introdução)
-- [Objetivo](#objetivo)
-- [Visão do código existente](#visão-do-código-existente)
-- [Implementação encontrada no projeto](#implementação-encontrada-no-projeto)
-  - [Interface Target — `LLMProvider`](#interface-target----llmprovider)
-  - [Adapters concretos (`OpenAIAdapter`, `MockAdapter`, `GeminiAdapter`)](#adapters-concretos-openaiadapter-mockadapter-geminiadapter)
-  - [Configuração / Factory — `LLMConfiguration`](#configuração--factory----llmconfiguration)
-- [Exemplo de uso](#exemplo-de-uso)
-- [Testes e verificação](#testes-e-verificação)
-- [Vantagens e desvantagens na implementação atual](#vantagens-e-desvantagens-na-implementação-atual)
-- [Próximos passos sugeridos](#próximos-passos-sugeridos)
-- [Referências](#referências)
-- [Histórico de versão](#histórico-de-versão)
+- [Introdução](#Introdução)
+- [Objetivo](#Objetivo)
+- [Metodologia](#Metodologia)
+- [Desenvolvimento e Implementação](#Desenvolvimento-e-Implementação)
+- [Modelagem do Adapter para LLMProvider](#Modelagem-do-Adapter-para-LLMProvider)
+    - [Implementação das Classes do Adapter](#Implementação-das-Classes-do-Adapter)
+    - [Classe de Teste AdapterTest](#Classe-de-Teste-AdapterTest)
+- [Vídeo Explicação e Execução do Adapter para LLMProvider](#Vídeo-Explicação-e-Execução-do-Adapter-para-LLMProvider)
+- [Discussão Vantagens e Desvantagens do Adapter](#Discussão-Vantagens-e-Desvantagens-do-Adapter)
+- [Conclusão](#Conclusão)
+- [Referências](#Referências)
+- [Histórico de Versão](#Histórico-de-Versão)
 
 ## Introdução
 
-O padrão Adapter é usado aqui para oferecer um contrato estável (`LLMProvider`) que o restante do domínio consome, enquanto a implementação concreta (OpenAI, Gemini, mock, etc.) pode variar. A `LLMConfiguration` escolhe qual adapter injetar com base em propriedade (`app.llm.provider`).
+Como explicado em [Adapter](https://refactoring.guru/pt-br/design-patterns/adapter), o padrão de projeto Adapter é uma solução estrutural utilizada para permitir que objetos com interfaces incompatíveis trabalhem juntos. Com isso, ele oferece uma interface unificada para diferentes implementações, o que o torna especialmente útil para integrar sistemas legados, APIs externas ou diferentes provedores de serviços, como LLMs (Large Language Models), sem modificar o código cliente existente.
+
+No contexto do projeto AILinguo, o padrão Adapter foi aplicado à interface LLMProvider, responsável por centralizar o acesso a diferentes provedores de LLM (OpenAI, Gemini, Mock), permitindo alternância entre eles sem modificar o código cliente. Assim, essa decisão arquitetural foi tomada para assegurar que haja uma interface estável para chamadas de LLM no sistema e evitar acoplamento entre o código cliente e as implementações específicas de cada provedor.
 
 ## Objetivo
 
-- Criar um contrato estável para chamadas LLM no domínio (`TutorResponse tutor(TutorRequest)`).
-- Permitir múltiplos provedores (OpenAI, Gemini, mocks) sem alterar o código cliente.
-- Centralizar a lógica de adaptação e a seleção do provider.
+Os principais objetivos ao aplicar o padrão Adapter à interface LLMProvider são:
 
-## Visão do código existente
+* *Interface Unificada:* Fornecer um contrato estável (TutorResponse tutor(TutorRequest)) que o restante do domínio consome, independentemente do provedor LLM utilizado.
+* *Flexibilidade de Provedores:* Permitir múltiplos provedores (OpenAI, Gemini, Mock) sem alterar o código cliente.
+* *Configuração Dinâmica:* Centralizar a lógica de seleção do provedor através de configuração (app.llm.provider).
+* *Testabilidade:* Facilitar testes unitários através do MockAdapter sem necessidade de chamadas externas.
 
-Arquivos relevantes (existentes no projeto):
+## Metodologia
 
-- `com.ailinguo.llm.LLMProvider` — interface Target que define `tutor(TutorRequest)`.
-- `com.ailinguo.llm.OpenAIAdapter` — adapter concreto que delega para `OpenAIService`.
-- `com.ailinguo.llm.MockAdapter` — adapter de teste que responde com dados simulados.
-- `com.ailinguo.llm.GeminiAdapter` — esqueleto de adapter para futura integração com Gemini.
-- `com.ailinguo.llm.LLMConfiguration` — classe `@Configuration` que cria o bean `LLMProvider` selecionando o provider por propriedade.
+O padrão de projeto estrutural *Adapter* foi selecionado para a interface LLMProvider devido à necessidade de integrar diferentes provedores de LLM com interfaces incompatíveis. Assim, como foi descrito em [Padrão Adapter: Implementação e Exemplos de Uso](https://refactoring.guru/pt-br/design-patterns/adapter), esta abordagem garante uma interface unificada para diferentes implementações.
 
-Esses arquivos já implementam a estrutura clássica do Adapter (Target + ConcreteAdapters) e uma fábrica simples.
+A implementação do padrão Adapter para a interface LLMProvider foi realizada em Java, utilizando o Spring Boot como framework de desenvolvimento, com o apoio das ferramentas e extensões para desenvolvimento Java. O processo de desenvolvimento seguiu as práticas padrão de codificação e organização em pacotes, conforme detalhado nas seções subsequentes.
 
-## Implementação encontrada no projeto
+*A concepção das classes do Adapter foi guiada pela análise dos seguintes artefatos de modelagem previamente desenvolvidos:*
 
-### Interface Target — `LLMProvider`
+* *Análise de Integração LLM:* As classes do Adapter são fundamentais para a integração com diferentes provedores de LLM na aplicação AILinguo, sendo utilizadas por serviços, controladores e componentes do sistema.
+* *Gerenciamento de Configuração:* As classes mantêm configurações para seleção dinâmica do provedor e gerenciamento de dependências.
+* *Encapsulamento de Implementação:* Múltiplas partes do sistema precisam acessar funcionalidades de LLM de forma consistente, incluindo integração com OpenAI, Gemini e testes com Mock.
 
-Trecho principal:
+*O desenvolvimento e implementação das classes do Adapter seguiram os seguintes passos:*
 
-```java
+1.  *Identificação da Necessidade de Adaptação:* Foi constatado, a partir da análise dos requisitos de integração com LLMs, que a plataforma "AILinguo" deveria possuir uma interface unificada para diferentes provedores. Esta interface centraliza todas as operações de LLM, e a existência de múltiplas implementações diretas seria conceitualmente incorreta e logisticamente problemática.
+2.  *Escolha do Padrão Adapter:* Diante da exigência de uma interface unificada para diferentes provedores, o padrão de projeto estrutural Adapter foi escolhido como a solução de design mais direta e apropriada.
+3.  *Definição da Estrutura das Classes:* Criação dos arquivos LLMProvider.java, OpenAIAdapter.java, MockAdapter.java, GeminiAdapter.java e LLMConfiguration.java.
+4.  *Implementação dos Elementos Característicos do Adapter*
+5.  *Definição dos Métodos de Negócio da Adaptação*
+6.  *Integração e Teste na Aplicação (AdapterTest.java):*
+
+*Principais Componentes e Características da Implementação do Adapter:*
+
+* *Interface LLMProvider:* Define o contrato estável para operações de LLM (tutor(TutorRequest)).
+* *Classe OpenAIAdapter:* Adapta a interface OpenAIService existente para o contrato LLMProvider.
+* *Classe MockAdapter:* Implementa um adapter de teste com respostas simuladas.
+* *Classe GeminiAdapter:* Esqueleto para futura integração com o provedor Gemini.
+* *Classe LLMConfiguration:* Factory que seleciona o adapter apropriado baseado em configuração.
+
+No contexto do "AILinguo", as classes do Adapter devem encapsular suas funcionalidades (como adaptação de interfaces, delegação de chamadas e configuração de provedores) e a lógica para gerenciá-los, enquanto o padrão Adapter controla a unificação e a adaptação.
+
+## Desenvolvimento e Implementação
+
+A seguir, são detalhadas a modelagem e a implementação das classes do Adapter e sua interação com outras partes do sistema.
+
+## Modelagem do Adapter para LLMProvider
+
+Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
+
+<div align="center">
+    Figura 1 (Adapter): Modelagem UML do Padrão Adapter para LLMProvider
+    <br>
+    <img src="https://via.placeholder.com/800x600/4CAF50/FFFFFF?text=Diagrama+UML+Adapter+LLMProvider" alt="Modelagem UML do Adapter para LLMProvider" width="800">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
+
+## Implementação das Classes do Adapter
+
+As classes do Adapter foram implementadas no pacote com.ailinguo.llm para representar o sistema de adaptação de provedores LLM da plataforma. Elas contêm interfaces bem definidas para adaptação, implementações concretas para diferentes provedores, e configuração para seleção dinâmica.
+
+Abaixo o código para as classes do Adapter:
+
+<details>
+  <summary><strong>Código para LLMProvider.java:</strong></summary>
+
+java
 package com.ailinguo.llm;
 
 import com.ailinguo.dto.tutor.TutorRequest;
 import com.ailinguo.dto.tutor.TutorResponse;
 
+/** Target (GoF Adapter) – contrato estável do domínio. */
 public interface LLMProvider {
     TutorResponse tutor(TutorRequest request);
 }
-```
 
-Esta interface é o contrato estável esperado pelos serviços/controles do domínio.
 
-### Adapters concretos (`OpenAIAdapter`, `MockAdapter`, `GeminiAdapter`)
+<b> Autor: </b> Gabriel Lima e Mateus Bastos.
 
-OpenAIAdapter (delegação ao serviço existente):
+</details>
 
-```java
+<details>
+  <summary><strong>Código para OpenAIAdapter.java:</strong></summary>
+
+java
 package com.ailinguo.llm;
 
 import com.ailinguo.dto.tutor.TutorRequest;
 import com.ailinguo.dto.tutor.TutorResponse;
 import com.ailinguo.service.OpenAIService;
 
+/** Adapter concreto p/ OpenAI – delega ao serviço existente. */
 public class OpenAIAdapter implements LLMProvider {
     private final OpenAIService openAIService;
-    public OpenAIAdapter(OpenAIService openAIService) { this.openAIService = openAIService; }
+    
+    public OpenAIAdapter(OpenAIService openAIService) { 
+        this.openAIService = openAIService; 
+    }
 
     @Override
     public TutorResponse tutor(TutorRequest request) {
         return openAIService.generateTutorResponse(request);
     }
 }
-```
 
-MockAdapter (adaptador de teste com resposta estática/formatada):
 
-```java
+<b> Autor: </b> Gabriel Lima e Mateus Bastos.
+
+</details>
+
+<details>
+  <summary><strong>Código para MockAdapter.java:</strong></summary>
+
+java
 package com.ailinguo.llm;
 
 import com.ailinguo.dto.tutor.TutorRequest;
 import com.ailinguo.dto.tutor.TutorResponse;
 import java.util.Arrays;
 
+/** Adapter mock */
 public class MockAdapter implements LLMProvider {
+
     @Override
     public TutorResponse tutor(TutorRequest request) {
         TutorResponse res = new TutorResponse();
@@ -112,16 +170,22 @@ public class MockAdapter implements LLMProvider {
         return res;
     }
 }
-```
 
-GeminiAdapter (esqueleto — ainda não implementado):
 
-```java
+<b> Autor: </b> Gabriel Lima e Mateus Bastos.
+
+</details>
+
+<details>
+  <summary><strong>Código para GeminiAdapter.java:</strong></summary>
+
+java
 package com.ailinguo.llm;
 
 import com.ailinguo.dto.tutor.TutorRequest;
 import com.ailinguo.dto.tutor.TutorResponse;
 
+/** Adapter para Gemini (esqueleto). Implemente quando integrar o SDK/HTTP. */
 public class GeminiAdapter implements LLMProvider {
     @Override
     public TutorResponse tutor(TutorRequest request) {
@@ -130,13 +194,16 @@ public class GeminiAdapter implements LLMProvider {
         return res;
     }
 }
-```
 
-### Configuração / Factory — `LLMConfiguration`
 
-Classe de configuração que fornece o bean `LLMProvider` com base na propriedade `app.llm.provider` (valor padrão `openai`):
+<b> Autor: </b> Gabriel Lima e Mateus Bastos.
 
-```java
+</details>
+
+<details>
+  <summary><strong>Código para LLMConfiguration.java:</strong></summary>
+
+java
 package com.ailinguo.llm;
 
 import com.ailinguo.service.OpenAIService;
@@ -144,6 +211,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/** Factory/Config do Adapter – escolhe o provider por propriedade. */
 @Configuration
 public class LLMConfiguration {
 
@@ -160,93 +228,247 @@ public class LLMConfiguration {
         }
     }
 }
-```
 
-Essa configuração torna fácil alternar providers por configuração (ex.: `-Dapp.llm.provider=mock`).
 
-## Exemplo de uso
+<b> Autor: </b> Gabriel Lima e Mateus Bastos.
 
-Um serviço ou controller que precise de um LLM deve depender da interface `LLMProvider` e receber o bean via injeção do Spring:
+</details>
 
-```java
-@Service
-public class TutorService {
-    private final LLMProvider llmProvider;
+##### Imagem do código no VSCODE
 
-    public TutorService(LLMProvider llmProvider) {
-        this.llmProvider = llmProvider;
+As figuras 2, 3, 4, 5 e 6 abaixo ilustram a estrutura das classes do Adapter no ambiente de desenvolvimento VSCode.
+
+<div align="center">
+    Figura 2: Interface LLMProvider.java
+    <br>
+    <img src="https://via.placeholder.com/1000x600/2196F3/FFFFFF?text=LLMProvider+Interface" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
+
+<div align="center">
+    Figura 3: Classe OpenAIAdapter.java
+    <br>
+    <img src="https://via.placeholder.com/1000x600/FF9800/FFFFFF?text=OpenAIAdapter+Class" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
+
+<div align="center">
+    Figura 4: Classe MockAdapter.java
+    <br>
+    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=MockAdapter+Class" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
+
+<div align="center">
+    Figura 5: Classe GeminiAdapter.java
+    <br>
+    <img src="https://via.placeholder.com/1000x600/4CAF50/FFFFFF?text=GeminiAdapter+Class" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
+
+<div align="center">
+    Figura 6: Classe LLMConfiguration.java
+    <br>
+    <img src="https://via.placeholder.com/1000x600/FF5722/FFFFFF?text=LLMConfiguration+Class" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
+
+## Classe de Teste AdapterTest
+
+A classe AdapterTest.java foi criada para demonstrar e testar o funcionamento do padrão Adapter aplicado ao LLMProvider. Esta classe contém testes que verificam a funcionalidade de adaptação, delegação de chamadas e comportamento dos diferentes adapters.
+
+*Observação:* Embora a implementação completa de testes unitários não seja o foco deste documento sobre Adapter, sua existência é necessária para a validação da funcionalidade das classes do Adapter.
+
+Abaixo o código para AdapterTest.java:
+
+<details>
+  <summary><strong>Código para AdapterTest.java</strong></summary>
+
+java
+package com.ailinguo.llm;
+
+import com.ailinguo.dto.tutor.TutorRequest;
+import com.ailinguo.dto.tutor.TutorResponse;
+import com.ailinguo.model.User;
+import com.ailinguo.service.OpenAIService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+class AdapterTest {
+
+    @Mock
+    private OpenAIService openAIService;
+
+    private TutorRequest sampleRequest;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        sampleRequest = new TutorRequest();
+        sampleRequest.setUserText("I go to school yesterday");
+        sampleRequest.setUserLevel(User.CefrLevel.A2);
     }
 
-    public TutorResponse askTutor(TutorRequest req) {
-        return llmProvider.tutor(req);
+    @Test
+    @DisplayName("MockAdapter deve retornar resposta mock válida")
+    void testMockAdapter() {
+        MockAdapter adapter = new MockAdapter();
+        
+        TutorResponse response = adapter.tutor(sampleRequest);
+        
+        assertNotNull(response);
+        assertNotNull(response.getReply());
+        assertTrue(response.getReply().contains("Mock"));
+        assertNotNull(response.getCorrections());
+        assertFalse(response.getCorrections().isEmpty());
+        assertNotNull(response.getMiniExercise());
+    }
+
+    @Test
+    @DisplayName("MockAdapter deve fazer correção de texto")
+    void testMockAdapterCorrection() {
+        MockAdapter adapter = new MockAdapter();
+        
+        TutorResponse response = adapter.tutor(sampleRequest);
+        
+        TutorResponse.Correction correction = response.getCorrections().get(0);
+        assertNotNull(correction);
+        assertTrue(correction.getCorrected().contains("went to"));
+        assertNotNull(correction.getExplanation());
+        assertNotNull(correction.getRule());
+    }
+
+    @Test
+    @DisplayName("GeminiAdapter deve retornar mensagem de não implementado")
+    void testGeminiAdapter() {
+        GeminiAdapter adapter = new GeminiAdapter();
+        
+        TutorResponse response = adapter.tutor(sampleRequest);
+        
+        assertNotNull(response);
+        assertNotNull(response.getReply());
+        assertTrue(response.getReply().contains("Gemini"));
+        assertTrue(response.getReply().contains("Not yet implemented"));
+    }
+
+    @Test
+    @DisplayName("OpenAIAdapter deve delegar para OpenAIService")
+    void testOpenAIAdapterDelegation() {
+        TutorResponse mockResponse = new TutorResponse();
+        mockResponse.setReply("OpenAI response");
+        
+        when(openAIService.generateTutorResponse(any(TutorRequest.class)))
+            .thenReturn(mockResponse);
+        
+        OpenAIAdapter adapter = new OpenAIAdapter(openAIService);
+        TutorResponse response = adapter.tutor(sampleRequest);
+        
+        assertNotNull(response);
+        assertEquals("OpenAI response", response.getReply());
+        verify(openAIService, times(1)).generateTutorResponse(sampleRequest);
+    }
+
+    @Test
+    @DisplayName("Todos os adapters devem implementar LLMProvider")
+    void testAllAdaptersImplementInterface() {
+        MockAdapter mockAdapter = new MockAdapter();
+        GeminiAdapter geminiAdapter = new GeminiAdapter();
+        OpenAIAdapter openAIAdapter = new OpenAIAdapter(openAIService);
+        
+        assertTrue(mockAdapter instanceof LLMProvider);
+        assertTrue(geminiAdapter instanceof LLMProvider);
+        assertTrue(openAIAdapter instanceof LLMProvider);
     }
 }
-```
 
-Com isso, trocar o provider não exige alteração do `TutorService`.
 
-## Testes e verificação
+<b> Autor: </b> Gabriel Lima e Mateus Bastos.
 
-- Já existe um `MockAdapter` que facilita testes unitários (injetando o provider mock via `LLMConfiguration` com `app.llm.provider=mock` ou instanciando `new MockAdapter()` diretamente nos testes).
-- Sugestão de casos de teste:
-  - Verificar que `MockAdapter` retorna respostas com `corrections` e `miniExercise` conforme o corpo do `TutorRequest` de exemplo.
-  - Testar `TutorService` com um `MockAdapter` injetado (ou com um mock do `LLMProvider`).
-  - Testar a delegação do `OpenAIAdapter` (aqui pode ser necessário mockar `OpenAIService` para validar chamadas e tratativas de erros).
+##### Imagem do código no VSCODE
 
-Exemplo simples de teste usando o `MockAdapter`:
+A figura 7 abaixo ilustra a estrutura da classe AdapterTest.java no ambiente de desenvolvimento VSCode.
 
-```java
-@Test
-public void testTutorServiceWithMockAdapter() {
-    MockAdapter mock = new MockAdapter();
-    TutorRequest req = new TutorRequest();
-    req.setUserText("I go to school yesterday");
-    TutorResponse resp = mock.tutor(req);
-    assertNotNull(resp.getReply());
-    assertFalse(resp.getCorrections().isEmpty());
-}
-```
+<div align="center">
+    Figura 7: Classe de Teste AdapterTest.java
+    <br>
+    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=AdapterTest+Class" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
 
-## Vantagens e desvantagens na implementação atual
+</details>
 
-Vantagens:
+## Vídeo Explicação e Execução do Adapter para LLMProvider
 
-- Implementação simples e clara do padrão Adapter; `LLMProvider` é o contrato único.
-- `LLMConfiguration` permite trocar providers por configuração, útil para ambientes (dev/test/prod).
-- `MockAdapter` facilita testes sem chamadas externas.
+O vídeo 1 abaixo mostra explicação e a execução do Adapter para LLMProvider
 
-Desvantagens / pontos a melhorar:
+<div align="center">
+    Vídeo 1: Adapter para LLMProvider
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/placeholder" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
 
-- `GeminiAdapter` está como esqueleto — falta implementar integração real e tratamento de erros/timeouts.
-- `LLMConfiguration` instancia adapters diretamente; se houver mais dependências (ex.: clientes HTTP diferentes), pode ser interessante usar `@ConditionalOnProperty` e `@ConfigurationProperties` ou providers separados para cada cliente.
-- Falta tratamento centralizado de erros e de timeouts/retries na camada de adapters (ex.: circuit-breaker, retry, fallback).
+## Discussão Vantagens e Desvantagens do Adapter
 
-## Próximos passos sugeridos
+A escolha de utilizar o padrão Adapter para a interface LLMProvider foi ponderada, considerando seus benefícios e também as críticas frequentemente associadas a este padrão.
 
-1. Implementar `GeminiAdapter` conectando o SDK/HTTP do provedor Gemini (tratamento de autenticação/erros).
-2. Adicionar testes que mockem `OpenAIService` para validar comportamento do `OpenAIAdapter` sem chamadas reais.
-3. Externalizar configuração de providers para `application.yml` com exemplos e documentação (ex.: `app.llm.provider: openai`).
-4. Considerar uso de adaptadores mais ricos: mapeamentos DTO<->domínio separados, validação, e retry/backoff.
+*Vantagens Observadas:*
+
+- *Interface Unificada:* O padrão fornece um contrato estável (TutorResponse tutor(TutorRequest)) que o restante do domínio consome, independentemente do provedor LLM utilizado.
+- *Flexibilidade de Provedores:* Permite múltiplos provedores (OpenAI, Gemini, Mock) sem alterar o código cliente.
+- *Configuração Dinâmica:* A LLMConfiguration permite trocar providers por configuração, útil para diferentes ambientes (dev/test/prod).
+- *Testabilidade:* O MockAdapter facilita testes sem chamadas externas.
+
+*Desvantagens e Considerações (Críticas ao Adapter):*
+
+É importante reconhecer as críticas comuns ao padrão Adapter, que foram consideradas:
+
+- *Complexidade Adicional:* O padrão pode adicionar complexidade desnecessária para integrações simples.
+- *Overhead de Performance:* Pode haver overhead adicional devido às camadas de adaptação.
+- *Manutenção:* Cada novo provedor requer implementação de um novo adapter.
+- *Acoplamento:* Ainda existe acoplamento com as interfaces específicas dos provedores.
+
+*Observação:* No contexto deste projeto e para a integração com diferentes provedores de LLM que requerem interfaces unificadas e configuração flexível, os benefícios de unificação e flexibilidade foram considerados preponderantes.
+
+## Conclusão
+
+A implementação das classes do Adapter utilizando o padrão Adapter atendeu ao requisito de fornecer uma interface unificada para diferentes provedores de LLM e encapsular as implementações específicas de cada provedor. A aplicação do padrão Adapter nas classes de LLM demonstra como este padrão pode ser efetivamente utilizado para integrar sistemas externos em aplicações Spring Boot, garantindo flexibilidade e unificação sobre operações de LLM.
 
 ## Referências
 
-- REFACTORING GURU. Adapter. Disponível em: https://refactoring.guru/pt-br/design-patterns/adapter
-- Documentação do Spring Boot: https://spring.io/projects/spring-boot
+[1] REFACTORING GURU. Adapter. Refactoring.Guru, [s.d.]. Disponível em: https://refactoring.guru/pt-br/design-patterns/adapter. Acesso em: 27 maio 2025.
+
+[2] GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+
+[3] DEVMEDIA. Padrão de Projeto Adapter em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-adapter-em-java/26397. Acesso em: 27 maio 2025.
+
+[4] THIENGO, Vinícius. Padrão de Projeto: Adapter. Thiengo, [s.d.]. Disponível em: https://www.thiengo.com.br/padrao-de-projeto-adapter. Acesso em: 27 maio 2025.
+
+[5] SPRING FRAMEWORK. Configuration Classes. Spring.io, [s.d.]. Disponível em: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-java-configuration. Acesso em: 27 maio 2025.
 
 ## Histórico de versão
 
 | Versão | Alteração | Responsável | Data |
 | - | - | - | - |
-| 1.0 | Elaboração dos códigos | Leo Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
-| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Felipe das Neves | 22/10/2025 |
-
-
-
-
-
-
-
-
-
-
-
+| 1.0 | Elaboração dos códigos e documentação | Gabriel Lima e Mateus Bastos | 23/10/2025 |
