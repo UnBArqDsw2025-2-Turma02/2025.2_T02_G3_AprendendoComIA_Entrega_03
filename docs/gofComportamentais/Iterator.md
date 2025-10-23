@@ -36,7 +36,7 @@ O padrão de projeto comportamental *Iterator* foi selecionado para a classe Voc
 
 A implementação do padrão Iterator para a classe VocabularyWord foi realizada em Java, utilizando o Spring Boot como framework de desenvolvimento, com o apoio das ferramentas e extensões para desenvolvimento Java. O processo de desenvolvimento seguiu as práticas padrão de codificação e organização em pacotes, conforme detalhado nas seções subsequentes.
 
-*A concepção das classes do Iterator foi guiada pela análise dos seguintes artefatos de modelagem previamente desenvolvidos:*
+A concepção das classes do Iterator foi guiada pela análise dos seguintes artefatos de modelagem previamente desenvolvidos:
 
 * *Análise de Coleções de Vocabulário:* As classes do Iterator são fundamentais para o acesso sequencial às palavras de vocabulário na aplicação AILinguo, sendo utilizadas por controladores, serviços e componentes do sistema.
 * *Gerenciamento de Iteração:* As classes mantêm controle sobre a posição atual da iteração e fornecem métodos para navegar pela coleção.
@@ -86,15 +86,14 @@ Abaixo o código para as classes do Iterator:
 <details>
   <summary><strong>Código para IIterator.java:</strong></summary>
 
-java
-package com.ailinguo.iterator;
+    java package com.ailinguo.iterator;
 
-public interface IIterator {
+    public interface IIterator {
     
-    public boolean hasNext();
+         public boolean hasNext();
 
-    public Object next();
-}
+         public Object next();
+    }
 
 
 <b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
@@ -104,16 +103,16 @@ public interface IIterator {
 <details>
   <summary><strong>Código para VocabularyCollection.java:</strong></summary>
 
-java
-package com.ailinguo.iterator;
+    java
+    package com.ailinguo.iterator;
 
-import com.ailinguo.model.VocabularyWord;
+    import com.ailinguo.model.VocabularyWord;
 
-public interface VocabularyCollection {
-    IIterator createIterator();
-    void addWord(VocabularyWord word);
-    int size();
-}
+    public interface VocabularyCollection {
+        IIterator createIterator();
+        void addWord(VocabularyWord word);
+        int size();
+    }
 
 
 <b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
@@ -123,44 +122,44 @@ public interface VocabularyCollection {
 <details>
   <summary><strong>Código para VocabularyWordCollection.java:</strong></summary>
 
-java
-package com.ailinguo.iterator;
+    java
+    package com.ailinguo.iterator;
 
-import com.ailinguo.model.VocabularyWord;
-import java.util.ArrayList;
-import java.util.List;
+    import com.ailinguo.model.VocabularyWord;
+    import java.util.ArrayList;
+    import java.util.List;
 
-public class VocabularyWordCollection implements VocabularyCollection {
+    public class VocabularyWordCollection implements VocabularyCollection {
     
-    private final List<VocabularyWord> words;
+        private final List<VocabularyWord> words;
     
-    public VocabularyWordCollection() {
-        this.words = new ArrayList<>();
-    }
+        public VocabularyWordCollection() {
+            this.words = new ArrayList<>();
+        }
     
-    public VocabularyWordCollection(List<VocabularyWord> words) {
-        this.words = new ArrayList<>(words);
-    }
+        public VocabularyWordCollection(List<VocabularyWord> words) {
+            this.words = new ArrayList<>(words);
+        }
     
-    @Override
-    public IIterator createIterator() {
-        return new VocabularyWordIterator(words);
-    }
+        @Override
+             public IIterator createIterator() {
+            return new VocabularyWordIterator(words);
+        }
     
-    @Override
-    public void addWord(VocabularyWord word) {
-        words.add(word);
-    }
+         @Override
+            public void addWord(VocabularyWord word) {
+            words.add(word);
+        }
     
-    @Override
-    public int size() {
-        return words.size();
-    }
+        @Override
+            public int size() {
+            return words.size();
+        }
     
-    public List<VocabularyWord> getWords() {
-        return new ArrayList<>(words);
-    }
-}
+        public List<VocabularyWord> getWords() {
+            return new ArrayList<>(words);
+            }
+        }
 
 
 <b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
@@ -170,22 +169,22 @@ public class VocabularyWordCollection implements VocabularyCollection {
 <details>
   <summary><strong>Código para VocabularyWordIterator.java:</strong></summary>
 
-java
-package com.ailinguo.iterator;
+    java
+    package com.ailinguo.iterator;
 
-import com.ailinguo.model.VocabularyWord;
-import java.util.List;
-import java.util.NoSuchElementException;
+    import com.ailinguo.model.VocabularyWord;
+    import java.util.List;
+    import java.util.NoSuchElementException;
 
-public class VocabularyWordIterator implements IIterator {
+    public class VocabularyWordIterator implements IIterator {
     
-    private final List<VocabularyWord> words;
-    private int currentPosition;
+        private final List<VocabularyWord> words;
+        private int currentPosition;
     
-    public VocabularyWordIterator(List<VocabularyWord> words) {
-        this.words = words;
-        this.currentPosition = 0;
-    }
+        public VocabularyWordIterator(List<VocabularyWord> words) {
+            this.words = words;
+            this.currentPosition = 0;
+        }
     
     @Override
     public boolean hasNext() {
@@ -198,8 +197,8 @@ public class VocabularyWordIterator implements IIterator {
             throw new NoSuchElementException("Não há mais palavras na coleção");
         }
         return words.get(currentPosition++);
+        }
     }
-}
 
 
 <b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
