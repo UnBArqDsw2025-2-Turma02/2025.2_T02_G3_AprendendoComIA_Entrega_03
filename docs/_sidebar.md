@@ -11,13 +11,8 @@
   - [Singleton](gofCriacionais/singleton.md)
 
 - **Gofs Estruturais**
-<<<<<<< Updated upstream
   - [Adapter](gofEstruturais/adapter.md)
   - [Facade](gofEstruturais/facade.md)
-=======
-  - [3. Metodologia](gofEstruturais/metodologia.md)
-    - [3.1. Adapter. ](gofEstruturais/adapter.md)
->>>>>>> Stashed changes
     
 - **Gofs Comportamentais**
   - [Iterator](gofComportamentais/Iterator.md)
