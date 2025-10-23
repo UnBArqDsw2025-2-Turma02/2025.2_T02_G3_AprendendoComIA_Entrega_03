@@ -1,4 +1,4 @@
-# Singleton (Padrão Criacional) – Escopo de Beans no AILinguo
+# Singleton (Padrão Criacional) – Implementação Clássica no AILinguo
 
 ---
 ## Sumário
@@ -8,9 +8,10 @@
 - [Diagrama UML](#diagrama-uml)
 - [Participantes e Mapeamento para o Código](#participantes-e-mapeamento-para-o-código)
 - [Desenvolvimento e Implementação](#desenvolvimento-e-implementação)
-  - [Singleton gerenciado por framework (Spring)](#singleton-gerenciado-por-framework-spring)
-  - [Exemplos representativos](#exemplos-representativos)
-- [Como usar (escopos de bean)](#como-usar-escopos-de-bean)
+  - [Implementação nas Classes](#implementação-nas-classes)
+  - [Pontos de atenção](#pontos-de-atenção)
+- [Código completo](#código-completo)
+- [Como usar](#como-usar)
 - [Testes](#testes)
 - [Vantagens e Desvantagens](#vantagens-e-desvantagens)
 - [Conclusão](#conclusão)
@@ -21,111 +22,676 @@
 
 ## Introdução
 
-O padrão criacional Singleton garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela. Em aplicações modernas Java com Spring, o Singleton costuma ser aplicado de forma declarativa: o contêiner IoC mantém um único objeto por tipo de bean com escopo `singleton` (padrão), evitando a necessidade de gerenciamento manual com `static` e `getInstance()`.
+O padrão criacional *Singleton* garante que uma classe tenha *apenas uma instância* durante toda a execução da aplicação e fornece um *ponto global de acesso* a ela. No AILinguo, o padrão Singleton clássico foi implementado manualmente em classes críticas que exigem controle centralizado e instância única: *Group* (gerenciamento do grupo principal) e *JwtUtil* (utilidades de JWT para autenticação).
 
 ---
 
 ## Objetivo
 
-- Garantir uma única instância por tipo de componente (quando apropriado) para economia de recursos e consistência.
-- Centralizar configurações e dependências em um único ponto.
-- Simplificar o ciclo de vida, delegando-o ao contêiner IoC (Spring).
+- Garantir uma única instância de classes críticas (Group principal e JwtUtil).
+- Centralizar o acesso e a lógica compartilhada em um único ponto.
+- Economizar recursos evitando múltiplas instâncias desnecessárias.
+- Manter consistência de estado entre os consumidores dessas classes.
 
 ---
 
 ## Contexto no AILinguo
 
-No backend do AILinguo, serviços, configurações e fábricas de componentes são registrados como beans Spring. Por padrão, esses beans têm escopo `singleton`, isto é, uma instância por ApplicationContext. Exemplos incluem serviços de domínio (como `OpenAIService`) e a fábrica do Adapter de LLM (`LLMConfiguration`), que expõe um `LLMProvider` único para todo o aplicativo.
+No backend do AILinguo, duas classes foram modeladas explicitamente como Singleton clássico (GoF):
+
+1. *Group* (backend-java/src/main/java/com/ailinguo/model/Group.java)
+   - Representa o *grupo principal* da plataforma.
+   - Gerencia membros, criação de subgrupos e operações centralizadas.
+   - Singleton para garantir que existe *apenas um grupo principal*.
+
+2. *JwtUtil* (backend-java/src/main/java/com/ailinguo/config/JwtUtil.java)
+   - Responsável por *geração e validação de tokens JWT*.
+   - Singleton para centralizar configurações (chave secreta, expiração) e utilidades de segurança.
+
+Ambas seguem a estrutura clássica: construtor privado, atributo estático privado e método público getInstance() sincronizado para thread-safety.
 
 ---
 
 ## Diagrama UML
 
 <div align="center">
-  Figura 1 (Singleton): Modelagem UML do padrão Singleton com gerenciamento por contêiner
-  <br>
-  <em>Client</em> → <strong>Spring Container</strong> (IoC) → <strong>Bean X</strong> (escopo: singleton)
-  <br>
-  <br>
-  ** >>>>>>>>>>>>>>>>>>>>>>>>> FALTA O UML <<<<<<<<<<<<<<<<<<<<<<<**
-  <br>
-</div>
+  <strong>Figura 1 (Singleton clássico): Modelagem UML de Group e JwtUtil</strong>
+  <br><br>
+  <pre>
+┌─────────────────────────────────┐
+│         «Singleton»             │
+│           Group                 │
+├─────────────────────────────────┤
+│ - instancia: Group (static)     │
+│ - id: Long                      │
+│ - name: String                  │
+│ - description: String           │
+│ - members: Integer              │
+│ - membersList: List&lt;User&gt;       │
+├─────────────────────────────────┤
+│ - Group()                       │
+│ + getInstance(): Group (static) │
+│ + adicionarMembro(User)         │
+│ + removerMembro(User)           │
+│ + criarSubgrupo(...)            │
+│ + listarSubgrupos(): List       │
+│ + exibirDetalhes()              │
+└─────────────────────────────────┘
 
-Observação: Diferentemente do Singleton “clássico” (com construtor privado + `getInstance()` estático), o AILinguo utiliza o Singleton gerenciado pelo Spring, que provê instância única por tipo de bean.
+┌─────────────────────────────────┐
+│         «Singleton»             │
+│          JwtUtil                │
+├─────────────────────────────────┤
+│ - instancia: JwtUtil (static)   │
+│ - secret: String                │
+│ - expiration: long              │
+├─────────────────────────────────┤
+│ - JwtUtil()                     │
+│ + getInstance(): JwtUtil        │
+│ + generateToken(...)            │
+│ + extractUserId(...)            │
+│ + isTokenValid(...)             │
+└─────────────────────────────────┘
+  </pre>
+  <br>
+  <small>colocar o uml</small>
+</div>
 
 ---
 
 ## Participantes e Mapeamento para o Código
 
-- Contêiner IoC (Spring): responsável por criar e manter a única instância de cada bean `singleton`.
-- Beans com escopo `singleton` (representativos):
-  - `OpenAIService` → `backend-java/src/main/java/com/ailinguo/service/OpenAIService.java` (anotado com `@Service`).
-  - `LLMConfiguration` → `backend-java/src/main/java/com/ailinguo/llm/LLMConfiguration.java` (anotado com `@Configuration`), que expõe o bean `LLMProvider` via `@Bean` – também `singleton` por padrão.
-  - Outros serviços anotados com `@Service` (e.g., `TutorService`, `VocabularyService`, etc.) também são `singleton`, salvo mudança explícita de escopo.
+- *Singletons do projeto:*
+  - Group → backend-java/src/main/java/com/ailinguo/model/Group.java
+    - Elementos do padrão: private static Group instancia; + private Group() + public static synchronized Group getInstance()
+  - JwtUtil → backend-java/src/main/java/com/ailinguo/config/JwtUtil.java
+    - Elementos do padrão: private static JwtUtil instancia; + private JwtUtil() + public static synchronized JwtUtil getInstance()
 
 ---
 
 ## Desenvolvimento e Implementação
 
-### Singleton gerenciado por framework (Spring)
+### Implementação nas Classes
 
-No Spring, o escopo padrão de beans é `singleton`. Isso significa que, para uma aplicação, haverá uma instância única de cada bean mantida pelo ApplicationContext. Não é necessário escrever código com `getInstance()`; basta anotar classes com `@Service`, `@Component`, `@Configuration`, ou expor métodos `@Bean`.
+Estrutura típica usada em Group e JwtUtil:
 
-### Exemplos representativos
+1. Atributo estático privado para guardar a instância única:
+java
+private static Group instancia;
 
-- OpenAIService (@Service): um serviço de integração com OpenAI, ideal como singleton para reutilizar clientes HTTP, configuração e controle de taxa (rate limiting) em um só lugar.
-- LLMConfiguration (@Configuration) + método @Bean llmProvider(...): fábrica que cria uma única instância de LLMProvider conforme a propriedade app.llm.provider (openai | gemini | mock). Essa instância é compartilhada por todo o aplicativo.
+
+2. Construtor privado para impedir new fora da classe:
+java
+private Group() {
+    this.id = 1L;
+    this.name = "Grupo Principal AILinguo";
+    // ...demais inicializações
+}
+
+
+3. Método público sincronizado para obter a instância (thread-safe):
+java
+public static synchronized Group getInstance() {
+    if (instancia == null) {
+        instancia = new Group();
+    }
+    return instancia;
+}
+
+
+### Pontos de atenção
+
+- O uso de synchronized em getInstance() garante thread-safety, com possível pequeno custo em cenários de altíssima concorrência.
+- Evite estado mutável compartilhado desnecessário nos Singletons; prefira imutabilidade quando possível.
+- Em testes, lembre de isolar efeitos (limpar listas/estado se necessário) ou recriar o contexto de teste.
 
 ---
 
-## Como usar (escopos de bean)
+## Código completo
 
-- O padrão no Spring é singleton. Não é preciso declarar explicitamente.
-- Para mudar o escopo (ex.: prototype), pode-se usar @Scope("prototype") sobre a classe/bean, mas só faça isso se houver um motivo forte (objetos com estado mutável, por exemplo).
-- Exemplo de definição de bean singleton via @Bean (o padrão já é singleton):
+<details>
+  <summary><strong>Group.java (Singleton clássico)</strong></summary>
 
 java
-@Configuration
-public class LLMConfiguration {
-    @Bean
-    public LLMProvider llmProvider(OpenAIService openAIService) {
-        // devolve uma única instância compartilhada
-        return new OpenAIAdapter(openAIService);
+package com.ailinguo.model;
+
+import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
+@Entity
+@Table(name = "groups")] 
+@EntityListeners(AuditingEntityListener.class)
+public class Group {
+    
+  // Atributo estático privado para guardar a ÚNICA instância da classe
+  private static Group instancia;
+    
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+    
+  @Column(nullable = false)
+  private String name;
+    
+  private String description;
+  private Integer members;
+  private Boolean open;
+    
+  // Atributos para gerenciamento centralizado
+  private static AtomicInteger proximoGrupoId = new AtomicInteger(1);
+  private static List<Group> gruposCriados = new ArrayList<>();
+    
+  @CreatedDate
+  @Column(name = "created_at", nullable = false, updatable = false)
+  private LocalDateTime createdAt;
+    
+  @LastModifiedDate
+  @Column(name = "updated_at")
+  private LocalDateTime updatedAt;
+    
+  // Construtor PRIVADO: impede a criação de instâncias com 'new Group()' de fora da classe
+  private Group() {
+    this.id = 1L;
+    this.name = "Grupo Principal AILinguo";
+    this.description = "O grupo principal para todos os usuários da plataforma";
+    this.members = 0;
+    this.open = true;
+    this.createdAt = LocalDateTime.now();
+    this.updatedAt = LocalDateTime.now();
+    this.membersList = new ArrayList<>();
+    System.out.println("👥 Instância ÚNICA do Grupo Principal criada! (Singleton) 👥");
+  }
+    
+  // Método estático público para obter a instância única
+  public static synchronized Group getInstance() {
+    if (instancia == null) {
+      instancia = new Group();
     }
+    return instancia;
+  }
+    
+  // Relacionamento many-to-many com User
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+    name = "group_members",
+    joinColumns = @JoinColumn(name = "group_id"),
+    inverseJoinColumns = @JoinColumn(name = "user_id")
+  )
+  private List<User> membersList;
+    
+  // Getters e Setters manuais
+  public Long getId() { return id; }
+  public void setId(Long id) { this.id = id; }
+    
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
+    
+  public String getDescription() { return description; }
+  public void setDescription(String description) { this.description = description; }
+    
+  public Integer getMembers() { return members; }
+  public void setMembers(Integer members) { this.members = members; }
+    
+  public Boolean getOpen() { return open; }
+  public void setOpen(Boolean open) { this.open = open; }
+    
+  public LocalDateTime getCreatedAt() { return createdAt; }
+  public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    
+  public LocalDateTime getUpdatedAt() { return updatedAt; }
+  public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    
+  public List<User> getMembersList() { return membersList; }
+  public void setMembersList(List<User> membersList) { this.membersList = membersList; }
+    
+  // Métodos de negócio para gerenciamento de grupos
+  public void adicionarMembro(User usuario) {
+    if (usuario != null && !this.membersList.contains(usuario)) {
+      this.membersList.add(usuario);
+      this.members = this.membersList.size();
+      this.updatedAt = LocalDateTime.now();
+      System.out.println("[Group Singleton] Usuário '" + usuario.getName() + "' adicionado ao grupo principal. Total de membros: " + this.members);
+    }
+  }
+    
+  public void removerMembro(User usuario) {
+    if (usuario != null && this.membersList.contains(usuario)) {
+      this.membersList.remove(usuario);
+      this.members = this.membersList.size();
+      this.updatedAt = LocalDateTime.now();
+      System.out.println("[Group Singleton] Usuário '" + usuario.getName() + "' removido do grupo principal. Total de membros: " + this.members);
+    }
+  }
+    
+  public void criarSubgrupo(String nome, String descricao) {
+    int novoId = proximoGrupoId.getAndIncrement();
+    Group subgrupo = new Group();
+    subgrupo.setId((long) novoId);
+    subgrupo.setName(nome);
+    subgrupo.setDescription(descricao);
+    subgrupo.setMembers(0);
+    subgrupo.setOpen(true);
+    subgrupo.setCreatedAt(LocalDateTime.now());
+    subgrupo.setUpdatedAt(LocalDateTime.now());
+    subgrupo.setMembersList(new ArrayList<>());
+        
+    gruposCriados.add(subgrupo);
+    System.out.println("[Group Singleton] Subgrupo '" + nome + "' (ID: " + novoId + ") criado pelo grupo principal.");
+  }
+    
+  public List<Group> listarSubgrupos() {
+    System.out.println("[Group Singleton] Listando " + gruposCriados.size() + " subgrupo(s) criado(s)...");
+    return new ArrayList<>(gruposCriados);
+  }
+    
+  public void exibirDetalhes() {
+    System.out.println("\n--- Detalhes do Grupo Principal (Singleton) ---");
+    System.out.println("ID: " + id);
+    System.out.println("Nome: " + name);
+    System.out.println("Descrição: " + description);
+    System.out.println("Membros: " + members);
+    System.out.println("Aberto: " + (open ? "Sim" : "Não"));
+    System.out.println("Criado em: " + createdAt);
+    System.out.println("Atualizado em: " + updatedAt);
+    if (membersList.isEmpty()) {
+      System.out.println("Lista de Membros: Nenhum membro adicionado ainda.");
+    } else {
+      System.out.println("Lista de Membros (" + membersList.size() + "):");
+      for (User member : membersList) {
+        System.out.println("  - " + member.getName() + " (ID: " + member.getId() + ", Email: " + member.getEmail() + ")");
+      }
+    }
+    System.out.println("Subgrupos criados: " + gruposCriados.size());
+    System.out.println("HashCode da Instância: " + this.hashCode());
+    System.out.println("----------------------------------------");
+  }
 }
+
+
+</details>
+
+<details>
+  <summary><strong>JwtUtil.java (Singleton clássico)</strong></summary>
+
+java
+package com.ailinguo.config;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+public class JwtUtil {
+    
+  // Atributo estático privado para guardar a ÚNICA instância da classe
+  private static JwtUtil instancia;
+    
+  @Value("${app.jwt.secret}")
+  private String secret;
+    
+  @Value("${app.jwt.expiration}")
+  private long expiration;
+    
+  // Construtor PRIVADO: impede a criação de instâncias com 'new JwtUtil()' de fora da classe
+  private JwtUtil() {
+    System.out.println("🔐 Instância ÚNICA do JwtUtil criada! (Singleton) 🔐");
+  }
+    
+  // Método estático público para obter a instância única
+  public static synchronized JwtUtil getInstance() {
+    if (instancia == null) {
+      instancia = new JwtUtil();
+    }
+    return instancia;
+  }
+    
+  private SecretKey getSigningKey() {
+    return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+  }
+    
+  public String generateToken(String userId, String email) {
+    Map<String, Object> claims = new HashMap<>();
+    claims.put("sub", userId);
+    claims.put("email", email);
+        
+    return Jwts.builder()
+        .claims(claims)
+        .issuedAt(new Date())
+        .expiration(new Date(System.currentTimeMillis() + expiration))
+        .signWith(getSigningKey())
+        .compact();
+  }
+    
+  public String extractUserId(String token) {
+    return extractAllClaims(token).getSubject();
+  }
+    
+  public String extractEmail(String token) {
+    return extractAllClaims(token).get("email", String.class);
+  }
+    
+  public boolean isTokenValid(String token) {
+    try {
+      extractAllClaims(token);
+      return !isTokenExpired(token);
+    } catch (Exception e) {
+      return false;
+    }
+  }
+    
+  private Claims extractAllClaims(String token) {
+    return Jwts.parser()
+        .verifyWith(getSigningKey())
+        .build()
+        .parseSignedClaims(token)
+        .getPayload();
+  }
+    
+  private boolean isTokenExpired(String token) {
+    return extractAllClaims(token).getExpiration().before(new Date());
+  }
+}
+
+
+</details>
+
+<details>
+  <summary><strong>GroupSingletonTest.java (Testes de Singleton)</strong></summary>
+
+java
+package com.ailinguo.model;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+public class GroupSingletonTest {
+    
+
+  @Test
+  public void testSingletonPattern() {
+    System.out.println("\n=== TESTANDO PADRÃO SINGLETON PARA GROUP ===");
+        
+    // Obter primeira instância
+    Group group1 = Group.getInstance();
+    System.out.println("Primeira instância obtida. HashCode: " + group1.hashCode());
+        
+    // Obter segunda instância
+    Group group2 = Group.getInstance();
+    System.out.println("Segunda instância obtida. HashCode: " + group2.hashCode());
+        
+    // Obter terceira instância
+    Group group3 = Group.getInstance();
+    System.out.println("Terceira instância obtida. HashCode: " + group3.hashCode());
+        
+    // Verificar se todas as instâncias são a mesma
+    assertSame(group1, group2, "As duas primeiras instâncias devem ser a mesma");
+    assertSame(group2, group3, "As duas últimas instâncias devem ser a mesma");
+    assertSame(group1, group3, "A primeira e terceira instâncias devem ser a mesma");
+        
+    System.out.println("✅ Confirmado: Todas as instâncias são a MESMA! (Singleton funcionando)");
+        
+    // Testar funcionalidade básica
+    assertNotNull(group1.getName(), "Nome do grupo não deve ser nulo");
+    assertNotNull(group1.getDescription(), "Descrição do grupo não deve ser nula");
+    assertTrue(group1.getOpen(), "Grupo deve estar aberto por padrão");
+    assertEquals(0, group1.getMembers(), "Grupo deve começar com 0 membros");
+        
+    System.out.println("✅ Funcionalidade básica do Group testada com sucesso!");
+    System.out.println("Nome do grupo: " + group1.getName());
+    System.out.println("Descrição: " + group1.getDescription());
+    System.out.println("===============================================\n");
+  }
+    
+  @Test
+  public void testGroupManagement() {
+    System.out.println("=== TESTANDO GERENCIAMENTO DE GRUPOS ===");
+        
+    Group grupoPrincipal = Group.getInstance();
+        
+    // Criar usuários de teste
+    User usuario1 = User.builder()
+        .id(1L)
+        .name("João Silva")
+        .email("joao@example.com")
+        .password("senha123")
+        .cefrLevel(User.CefrLevel.A2)
+        .build();
+        
+    User usuario2 = User.builder()
+        .id(2L)
+        .name("Maria Santos")
+        .email("maria@example.com")
+        .password("senha456")
+        .cefrLevel(User.CefrLevel.B1)
+        .build();
+        
+    // Testar adição de membros
+    grupoPrincipal.adicionarMembro(usuario1);
+    assertEquals(1, grupoPrincipal.getMembers(), "Grupo deve ter 1 membro após adicionar usuário1");
+        
+    grupoPrincipal.adicionarMembro(usuario2);
+    assertEquals(2, grupoPrincipal.getMembers(), "Grupo deve ter 2 membros após adicionar usuário2");
+        
+    // Testar criação de subgrupos
+    grupoPrincipal.criarSubgrupo("Grupo Iniciantes", "Grupo para usuários iniciantes");
+    grupoPrincipal.criarSubgrupo("Grupo Avançados", "Grupo para usuários avançados");
+        
+    List<Group> subgrupos = grupoPrincipal.listarSubgrupos();
+    assertEquals(2, subgrupos.size(), "Devem existir 2 subgrupos criados");
+        
+    // Testar remoção de membro
+    grupoPrincipal.removerMembro(usuario1);
+    assertEquals(1, grupoPrincipal.getMembers(), "Grupo deve ter 1 membro após remover usuário1");
+        
+    System.out.println("✅ Gerenciamento de grupos testado com sucesso!");
+    grupoPrincipal.exibirDetalhes();
+    System.out.println("===============================================\n");
+  }
+    
+  @Test
+  public void testMultipleThreadsSingleton() {
+    System.out.println("=== TESTANDO SINGLETON COM MÚLTIPLAS THREADS ===");
+        
+    final int NUM_THREADS = 10;
+    final Group[] instances = new Group[NUM_THREADS];
+    final Thread[] threads = new Thread[NUM_THREADS];
+        
+    // Criar múltiplas threads que tentam obter a instância
+    for (int i = 0; i < NUM_THREADS; i++) {
+      final int index = i;
+      threads[i] = new Thread(() -> {
+        instances[index] = Group.getInstance();
+        System.out.println("Thread " + index + " obteve instância. HashCode: " + instances[index].hashCode());
+      });
+    }
+        
+    // Iniciar todas as threads
+    for (Thread thread : threads) {
+      thread.start();
+    }
+        
+    // Aguardar todas as threads terminarem
+    for (Thread thread : threads) {
+      try {
+        thread.join();
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      }
+    }
+        
+    // Verificar se todas as instâncias são a mesma
+    Group firstInstance = instances[0];
+    for (int i = 1; i < NUM_THREADS; i++) {
+      assertSame(firstInstance, instances[i], 
+        "Todas as instâncias obtidas em threads diferentes devem ser a mesma");
+    }
+        
+    System.out.println("✅ Singleton thread-safe funcionando corretamente!");
+    System.out.println("===============================================\n");
+  }
+    
+  @Test
+  public void testGroupOperations() {
+    System.out.println("=== TESTANDO OPERAÇÕES DO GRUPO ===");
+        
+    Group grupo = Group.getInstance();
+        
+    // Testar criação de múltiplos subgrupos
+    grupo.criarSubgrupo("Grupo A1", "Iniciantes absolutos");
+    grupo.criarSubgrupo("Grupo A2", "Iniciantes com conhecimento básico");
+    grupo.criarSubgrupo("Grupo B1", "Intermediários");
+    grupo.criarSubgrupo("Grupo B2", "Intermediários avançados");
+    grupo.criarSubgrupo("Grupo C1", "Avançados");
+        
+    List<Group> subgrupos = grupo.listarSubgrupos();
+    assertEquals(5, subgrupos.size(), "Devem existir 5 subgrupos");
+        
+    // Verificar se os subgrupos têm IDs únicos
+    List<Long> ids = subgrupos.stream().map(Group::getId).toList();
+    assertEquals(5, ids.stream().distinct().count(), "Todos os IDs devem ser únicos");
+        
+    // Testar adição de múltiplos usuários
+    for (int i = 1; i <= 5; i++) {
+      User usuario = User.builder()
+          .id((long) i)
+          .name("Usuário " + i)
+          .email("usuario" + i + "@example.com")
+          .password("senha" + i)
+          .cefrLevel(User.CefrLevel.A1)
+          .build();
+      grupo.adicionarMembro(usuario);
+    }
+        
+    assertEquals(5, grupo.getMembers(), "Grupo deve ter 5 membros");
+    assertEquals(5, grupo.getMembersList().size(), "Lista de membros deve ter 5 usuários");
+        
+    System.out.println("✅ Operações do grupo testadas com sucesso!");
+    grupo.exibirDetalhes();
+    System.out.println("===============================================\n");
+  }
+}
+
+
+</details>
+
+<details>
+  <summary><strong>JwtUtilSingletonTest.java (Testes de Singleton para JwtUtil)</strong></summary>
+
+java
+package com.ailinguo.config;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class JwtUtilSingletonTest {
+
+  @Test
+  public void testSingletonPattern() {
+    JwtUtil u1 = JwtUtil.getInstance();
+    JwtUtil u2 = JwtUtil.getInstance();
+    assertSame(u1, u2, "As instâncias de JwtUtil devem ser a mesma (Singleton)");
+  }
+
+  @Test
+  public void testMultipleThreadsSingleton() throws InterruptedException {
+    final int NUM_THREADS = 10;
+    final JwtUtil[] instances = new JwtUtil[NUM_THREADS];
+    final Thread[] threads = new Thread[NUM_THREADS];
+
+    for (int i = 0; i < NUM_THREADS; i++) {
+      final int idx = i;
+      threads[i] = new Thread(() -> instances[idx] = JwtUtil.getInstance());
+    }
+    for (Thread t : threads) t.start();
+    for (Thread t : threads) t.join();
+
+    JwtUtil first = instances[0];
+    for (int i = 1; i < NUM_THREADS; i++) {
+      assertSame(first, instances[i], "Todas as threads devem obter a mesma instância de JwtUtil");
+    }
+  }
+}
+
+
+<em>Observação</em>: Este teste foca apenas na propriedade de Singleton de JwtUtil. Como a classe usa @Value para ler propriedades e possui @Component, métodos que dependem de secret/expiration (como generateToken) não devem ser exercitados aqui a menos que você ajuste a injeção/configuração para o cenário de teste.
+
+</details>
+
+---
+
+## Como usar
+
+Não instancie com new. Sempre acesse pelo método estático getInstance():
+
+java
+// Group (Singleton)
+Group grupoPrincipal = Group.getInstance();
+grupoPrincipal.adicionarMembro(usuario);
+
+// JwtUtil (Singleton)
+JwtUtil jwt = JwtUtil.getInstance();
+String token = jwt.generateToken("123", "user@example.com");
 
 
 ---
 
 ## Testes
 
-Validações típicas de Singleton no contexto Spring:
-- Verificar que duas injeções do mesmo bean referenciam a mesma instância (mesmo System.identityHashCode).
-- Em testes com Spring Boot (@SpringBootTest), pedir o bean duas vezes do ApplicationContext e comparar referências.
+Os testes de verificação do Singleton estão em:
 
-No repositório, há testes de configuração (ex.: LLMConfigurationTest) que garantem a criação e seleção do bean LLMProvider via propriedade de configuração. Embora não foquem diretamente em “uma única instância”, eles exercitam o ponto global de acesso do Singleton gerenciado pelo container.
+- backend-java/src/test/java/com/ailinguo/model/GroupSingletonTest.java
+- (Opcional sugerido) backend-java/src/test/java/com/ailinguo/config/JwtUtilSingletonTest.java
+
+Principais verificações implementadas:
+
+1. Múltiplas chamadas a Group.getInstance() retornam a *mesma instância* (assertSame).
+2. Operações de negócio preservam estado na instância única (adicionar/remover membros, criar/listar subgrupos).
+3. *Thread-safety*: 10 threads chamando getInstance() retornam a mesma referência (mesmo hashCode).
 
 ---
 
 ## Vantagens e Desvantagens
 
-- Vantagens
-  - Controle centralizado do ciclo de vida e dependências.
-  - Economia de recursos ao reutilizar instâncias pesadas (clientes HTTP, pools, etc.).
-  - Simplicidade de uso com injeção de dependências.
-- Desvantagens
-  - Estado global mal utilizado pode causar efeitos colaterais; prefira imutabilidade nos beans.
-  - Em cenários altamente concorrentes, cuidado com dados de instância mutáveis.
+### Vantagens
+- Controle rigoroso da instância única.
+- Economia de recursos ao evitar múltiplas instâncias.
+- Ponto de acesso global centralizado.
+- Consistência de estado visível a todos os consumidores.
+
+### Desvantagens
+- Pode aumentar acoplamento global se usado indiscriminadamente.
+- Pode dificultar testes (estado compartilhado entre cenários).
+- synchronized pode impactar performance em picos de concorrência.
 
 ---
 
 ## Conclusão
 
-O AILinguo adota o padrão Singleton por meio do contêiner IoC do Spring. Com isso, serviços e fábricas críticos (como OpenAIService e o bean LLMProvider) possuem uma única instância global, reduzindo acoplamento e custo de criação, e simplificando a injeção e o gerenciamento do ciclo de vida.
+O AILinguo utiliza o *Singleton clássico* nas classes *Group* e *JwtUtil* para garantir instância única e acesso centralizado a funcionalidades críticas (gestão do grupo principal e utilidades de JWT). A implementação segue o padrão do GoF e foi validada por testes que cobrem unicidade, operações de negócio e cenários com múltiplas threads.
 
 ---
 
-## Bibliografia
+## Referências Bibliográficas
 
 > FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
 
@@ -133,13 +699,10 @@ O AILinguo adota o padrão Singleton por meio do contêiner IoC do Spring. Com i
 
 > Refactoring.Guru – Singleton: https://refactoring.guru/pt-br/design-patterns/singleton
 
-> Spring Framework Docs – Bean Scopes: https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html
-
 ---
 
 ## Histórico de Versões
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Visão geral do Singleton no AILinguo: IoC do Spring, mapeamento de beans e contexto | [Leonardo de Melo Lima](https://github.com/leozinlima) | 23/10/2025 | | | |
-| `1.1` |Exemplos representativos, Escopo de bean, testes e conclusão do Singleton no AILíguo | [Vítor Bessa](https://github.com/Bessaz) | 23/10/2025 | | | |
+| 1.0 | Singleton clássico no AILinguo: implementação em Group e JwtUtil, testes e thread-safety | [Leonardo de Melo Lima](https://github.com/leozinlima), [Vitor Bessa](https://github.com/Bessazs) | 23/10/2025 | | | |
