@@ -56,42 +56,24 @@ Ambas seguem a estrutura clássica: construtor privado, atributo estático priva
 
 Figura 1 (Singleton clássico): Modelagem UML de Group e JwtUtil
 
-```
-┌─────────────────────────────────┐
-│         «Singleton»             │
-│           Group                 │
-├─────────────────────────────────┤
-│ - instancia: Group (static)     │
-│ - id: Long                      │
-│ - name: String                  │
-│ - description: String           │
-│ - members: Integer              │
-│ - membersList: List<User>       │
-├─────────────────────────────────┤
-│ - Group()                       │
-│ + getInstance(): Group (static) │
-│ + adicionarMembro(User)         │
-│ + removerMembro(User)           │
-│ + criarSubgrupo(...)            │
-│ + listarSubgrupos(): List       │
-│ + exibirDetalhes()              │
-└─────────────────────────────────┘
+![UML do Singleton (Group e JwtUtil)](../assets/gofcodes/singleton.jpeg)
 
-┌─────────────────────────────────┐
-│         «Singleton»             │
-│          JwtUtil                │
-├─────────────────────────────────┤
-│ - instancia: JwtUtil (static)   │
-│ - secret: String                │
-│ - expiration: long              │
-├─────────────────────────────────┤
-│ - JwtUtil()                     │
-│ + getInstance(): JwtUtil        │
-│ + generateToken(...)            │
-│ + extractUserId(...)            │
-│ + isTokenValid(...)             │
-└─────────────────────────────────┘
-```
+Descrição do diagrama (resumo):
+
+- Classes: `Group` e `JwtUtil`, ambas marcadas com o estereótipo «Singleton».
+- Responsabilidade comum: garantir uma única instância acessível de forma global.
+- Atributos principais:
+  - `Group`: `instancia: Group (static)`, além de `id`, `name`, `description`, `members` e `membersList: List<User>`.
+  - `JwtUtil`: `instancia: JwtUtil (static)`, `secret: String` (chave), `expiration: long` (expiração do token).
+- Operações principais ligadas ao padrão:
+  - `getInstance()` (estático e sincronizado) em ambas as classes, retornando a única instância.
+  - Construtor privado para impedir `new` fora da própria classe.
+- Operações de domínio/utilidade:
+  - `Group`: `adicionarMembro(User)`, `removerMembro(User)`, `criarSubgrupo(...)`, `listarSubgrupos(): List<Group>`, `exibirDetalhes()`.
+  - `JwtUtil`: `generateToken(...)`, `extractUserId(...)`, `extractEmail(...)`, `isTokenValid(...)`.
+- Observações do projeto:
+  - `Group` é uma entidade JPA; o Singleton centraliza o “grupo principal” da plataforma.
+  - `JwtUtil` usa `@Component`/`@Value` junto com Singleton manual; recomenda-se padronizar (ou apenas bean Spring, ou apenas Singleton clássico) em uma iteração futura.
 
 ---
 
@@ -164,7 +146,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Entity
-@Table(name = "groups")] 
+@Table(name = "groups") 
 @EntityListeners(AuditingEntityListener.class)
 public class Group {
     
