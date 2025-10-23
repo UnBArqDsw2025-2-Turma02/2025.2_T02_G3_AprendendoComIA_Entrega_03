@@ -85,7 +85,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Casos de Uso | Excelente | [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
 | [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Casos de Uso | Excelente | [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | |  |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Mediator" | Excelente| [Mediator](gofComportamentais/mediator.md)|
+| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Observer" | Excelente| [Observer](gofComportamentais/observer.md)|
 | [Vitor Bessa](https://github.com/Bessazs) | | | |
 | [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Casos de Uso | Excelente |[Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
 | [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Casos de Uso | Excelente |[Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
