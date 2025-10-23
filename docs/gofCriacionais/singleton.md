@@ -22,7 +22,7 @@
 
 ## Introdução
 
-O padrão criacional *Singleton* garante que uma classe tenha *apenas uma instância* durante toda a execução da aplicação e fornece um *ponto global de acesso* a ela. No AILinguo, o padrão Singleton clássico foi implementado manualmente em classes críticas que exigem controle centralizado e instância única: *Group* (gerenciamento do grupo principal) e *JwtUtil* (utilidades de JWT para autenticação).
+O padrão criacional **Singleton** garante que uma classe tenha **apenas uma instância** durante toda a execução da aplicação e fornece um **ponto global de acesso** a ela. No AILinguo, o padrão Singleton clássico foi implementado manualmente em classes críticas que exigem controle centralizado e instância única: **`Group`** (gerenciamento do grupo principal) e **`JwtUtil`** (utilidades de JWT para autenticação).
 
 ---
 
@@ -39,25 +39,24 @@ O padrão criacional *Singleton* garante que uma classe tenha *apenas uma instâ
 
 No backend do AILinguo, duas classes foram modeladas explicitamente como Singleton clássico (GoF):
 
-1. *Group* (backend-java/src/main/java/com/ailinguo/model/Group.java)
-   - Representa o *grupo principal* da plataforma.
+1. **`Group`** (`backend-java/src/main/java/com/ailinguo/model/Group.java`)
+   - Representa o **grupo principal** da plataforma.
    - Gerencia membros, criação de subgrupos e operações centralizadas.
-   - Singleton para garantir que existe *apenas um grupo principal*.
+   - Singleton para garantir que existe **apenas um grupo principal**.
 
-2. *JwtUtil* (backend-java/src/main/java/com/ailinguo/config/JwtUtil.java)
-   - Responsável por *geração e validação de tokens JWT*.
+2. **`JwtUtil`** (`backend-java/src/main/java/com/ailinguo/config/JwtUtil.java`)
+   - Responsável por **geração e validação de tokens JWT**.
    - Singleton para centralizar configurações (chave secreta, expiração) e utilidades de segurança.
 
-Ambas seguem a estrutura clássica: construtor privado, atributo estático privado e método público getInstance() sincronizado para thread-safety.
+Ambas seguem a estrutura clássica: construtor privado, atributo estático privado e método público `getInstance()` sincronizado para thread-safety.
 
 ---
 
 ## Diagrama UML
 
-<div align="center">
-  <strong>Figura 1 (Singleton clássico): Modelagem UML de Group e JwtUtil</strong>
-  <br><br>
-  <pre>
+Figura 1 (Singleton clássico): Modelagem UML de Group e JwtUtil
+
+```
 ┌─────────────────────────────────┐
 │         «Singleton»             │
 │           Group                 │
@@ -67,7 +66,7 @@ Ambas seguem a estrutura clássica: construtor privado, atributo estático priva
 │ - name: String                  │
 │ - description: String           │
 │ - members: Integer              │
-│ - membersList: List&lt;User&gt;       │
+│ - membersList: List<User>       │
 ├─────────────────────────────────┤
 │ - Group()                       │
 │ + getInstance(): Group (static) │
@@ -92,20 +91,17 @@ Ambas seguem a estrutura clássica: construtor privado, atributo estático priva
 │ + extractUserId(...)            │
 │ + isTokenValid(...)             │
 └─────────────────────────────────┘
-  </pre>
-  <br>
-  <small>colocar o uml</small>
-</div>
+```
 
 ---
 
 ## Participantes e Mapeamento para o Código
 
-- *Singletons do projeto:*
-  - Group → backend-java/src/main/java/com/ailinguo/model/Group.java
-    - Elementos do padrão: private static Group instancia; + private Group() + public static synchronized Group getInstance()
-  - JwtUtil → backend-java/src/main/java/com/ailinguo/config/JwtUtil.java
-    - Elementos do padrão: private static JwtUtil instancia; + private JwtUtil() + public static synchronized JwtUtil getInstance()
+- **Singletons do projeto:**
+  - `Group` → `backend-java/src/main/java/com/ailinguo/model/Group.java`
+    - Elementos do padrão: `private static Group instancia;` + `private Group()` + `public static synchronized Group getInstance()`
+  - `JwtUtil` → `backend-java/src/main/java/com/ailinguo/config/JwtUtil.java`
+    - Elementos do padrão: `private static JwtUtil instancia;` + `private JwtUtil()` + `public static synchronized JwtUtil getInstance()`
 
 ---
 
@@ -113,35 +109,35 @@ Ambas seguem a estrutura clássica: construtor privado, atributo estático priva
 
 ### Implementação nas Classes
 
-Estrutura típica usada em Group e JwtUtil:
+Estrutura típica usada em `Group` e `JwtUtil`:
 
 1. Atributo estático privado para guardar a instância única:
-java
+~~~java
 private static Group instancia;
+~~~
 
-
-2. Construtor privado para impedir new fora da classe:
-java
+2. Construtor privado para impedir `new` fora da classe:
+~~~java
 private Group() {
     this.id = 1L;
     this.name = "Grupo Principal AILinguo";
     // ...demais inicializações
 }
-
+~~~
 
 3. Método público sincronizado para obter a instância (thread-safe):
-java
+~~~java
 public static synchronized Group getInstance() {
     if (instancia == null) {
         instancia = new Group();
     }
     return instancia;
 }
-
+~~~
 
 ### Pontos de atenção
 
-- O uso de synchronized em getInstance() garante thread-safety, com possível pequeno custo em cenários de altíssima concorrência.
+- O uso de `synchronized` em `getInstance()` garante thread-safety, com possível pequeno custo em cenários de altíssima concorrência.
 - Evite estado mutável compartilhado desnecessário nos Singletons; prefira imutabilidade quando possível.
 - Em testes, lembre de isolar efeitos (limpar listas/estado se necessário) ou recriar o contexto de teste.
 
@@ -150,9 +146,11 @@ public static synchronized Group getInstance() {
 ## Código completo
 
 <details>
-  <summary><strong>Group.java (Singleton clássico)</strong></summary>
+<summary><strong>Group.java (Singleton clássico)</strong></summary>
 
-java
+
+~~~java
+// File: backend-java/src/main/java/com/ailinguo/model/Group.java
 package com.ailinguo.model;
 
 import jakarta.persistence.*;
@@ -313,14 +311,16 @@ public class Group {
     System.out.println("----------------------------------------");
   }
 }
-
+~~~
 
 </details>
 
 <details>
-  <summary><strong>JwtUtil.java (Singleton clássico)</strong></summary>
+<summary><strong>JwtUtil.java (Singleton clássico)</strong></summary>
 
-java
+
+~~~java
+// File: backend-java/src/main/java/com/ailinguo/config/JwtUtil.java
 package com.ailinguo.config;
 
 import io.jsonwebtoken.Claims;
@@ -406,14 +406,16 @@ public class JwtUtil {
     return extractAllClaims(token).getExpiration().before(new Date());
   }
 }
-
+~~~
 
 </details>
 
 <details>
-  <summary><strong>GroupSingletonTest.java (Testes de Singleton)</strong></summary>
+<summary><strong>GroupSingletonTest.java (Testes de Singleton)</strong></summary>
 
-java
+
+~~~java
+// File: backend-java/src/test/java/com/ailinguo/model/GroupSingletonTest.java
 package com.ailinguo.model;
 
 import org.junit.jupiter.api.Test;
@@ -590,14 +592,16 @@ public class GroupSingletonTest {
     System.out.println("===============================================\n");
   }
 }
-
+~~~
 
 </details>
 
 <details>
-  <summary><strong>JwtUtilSingletonTest.java (Testes de Singleton para JwtUtil)</strong></summary>
+<summary><strong>JwtUtilSingletonTest.java (Testes de Singleton para JwtUtil)</strong></summary>
 
-java
+
+~~~java
+// File: backend-java/src/test/java/com/ailinguo/config/JwtUtilSingletonTest.java
 package com.ailinguo.config;
 
 import org.junit.jupiter.api.Test;
@@ -631,19 +635,19 @@ public class JwtUtilSingletonTest {
     }
   }
 }
-
-
-<em>Observação</em>: Este teste foca apenas na propriedade de Singleton de JwtUtil. Como a classe usa @Value para ler propriedades e possui @Component, métodos que dependem de secret/expiration (como generateToken) não devem ser exercitados aqui a menos que você ajuste a injeção/configuração para o cenário de teste.
+~~~
 
 </details>
+
+Observação: Este teste foca apenas na propriedade de Singleton de `JwtUtil`. Como a classe usa `@Value` para ler propriedades e possui `@Component`, métodos que dependem de `secret`/`expiration` (como `generateToken`) não devem ser exercitados aqui a menos que você ajuste a injeção/configuração para o cenário de teste.
 
 ---
 
 ## Como usar
 
-Não instancie com new. Sempre acesse pelo método estático getInstance():
+Não instancie com `new`. Sempre acesse pelo método estático `getInstance()`:
 
-java
+~~~java
 // Group (Singleton)
 Group grupoPrincipal = Group.getInstance();
 grupoPrincipal.adicionarMembro(usuario);
@@ -651,7 +655,7 @@ grupoPrincipal.adicionarMembro(usuario);
 // JwtUtil (Singleton)
 JwtUtil jwt = JwtUtil.getInstance();
 String token = jwt.generateToken("123", "user@example.com");
-
+~~~
 
 ---
 
@@ -659,14 +663,14 @@ String token = jwt.generateToken("123", "user@example.com");
 
 Os testes de verificação do Singleton estão em:
 
-- backend-java/src/test/java/com/ailinguo/model/GroupSingletonTest.java
-- (Opcional sugerido) backend-java/src/test/java/com/ailinguo/config/JwtUtilSingletonTest.java
+- `backend-java/src/test/java/com/ailinguo/model/GroupSingletonTest.java`
+- (Opcional sugerido) `backend-java/src/test/java/com/ailinguo/config/JwtUtilSingletonTest.java`
 
 Principais verificações implementadas:
 
-1. Múltiplas chamadas a Group.getInstance() retornam a *mesma instância* (assertSame).
+1. Múltiplas chamadas a `Group.getInstance()` retornam a **mesma instância** (`assertSame`).
 2. Operações de negócio preservam estado na instância única (adicionar/remover membros, criar/listar subgrupos).
-3. *Thread-safety*: 10 threads chamando getInstance() retornam a mesma referência (mesmo hashCode).
+3. **Thread-safety**: 10 threads chamando `getInstance()` retornam a mesma referência (mesmo hashCode).
 
 ---
 
@@ -681,13 +685,13 @@ Principais verificações implementadas:
 ### Desvantagens
 - Pode aumentar acoplamento global se usado indiscriminadamente.
 - Pode dificultar testes (estado compartilhado entre cenários).
-- synchronized pode impactar performance em picos de concorrência.
+- `synchronized` pode impactar performance em picos de concorrência.
 
 ---
 
 ## Conclusão
 
-O AILinguo utiliza o *Singleton clássico* nas classes *Group* e *JwtUtil* para garantir instância única e acesso centralizado a funcionalidades críticas (gestão do grupo principal e utilidades de JWT). A implementação segue o padrão do GoF e foi validada por testes que cobrem unicidade, operações de negócio e cenários com múltiplas threads.
+O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUtil`** para garantir instância única e acesso centralizado a funcionalidades críticas (gestão do grupo principal e utilidades de JWT). A implementação segue o padrão do GoF e foi validada por testes que cobrem unicidade, operações de negócio e cenários com múltiplas threads.
 
 ---
 
@@ -705,4 +709,4 @@ O AILinguo utiliza o *Singleton clássico* nas classes *Group* e *JwtUtil* para 
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| 1.0 | Singleton clássico no AILinguo: implementação em Group e JwtUtil, testes e thread-safety | [Leonardo de Melo Lima](https://github.com/leozinlima), [Vitor Bessa](https://github.com/Bessazs) | 23/10/2025 | | | |
+| `1.0` | Singleton clássico no AILinguo: implementação em Group e JwtUtil, testes e thread-safety | [Leonardo de Melo Lima](https://github.com/leozinlima), [Vitor Bessa](https://github.com/Bessazs) | 23/10/2025 | | | |
