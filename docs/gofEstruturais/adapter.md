@@ -1,15 +1,4 @@
-<<<<<<< Updated upstream
-# Adapter
-
----
 ## Sumário
-- [Introdução](#introdução)
-- [Diagrama UML](#diagrama)
-- [Referências Bibliográficas](#referencias-bibliográficas)
-- [Histórico de Versões](#histórico-de-versões)
-=======
-## Sumário
->>>>>>> Stashed changes
 
 - [Introdução](#introdução)
 - [Objetivo](#objetivo)
@@ -27,9 +16,6 @@
 
 ## Introdução
 
-<<<<<<< Updated upstream
-Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Adapter__ é definido como uma maneira de fazer duas interfaces incompatíveis trabalharem juntas, ou seja, ele atua como um tradutor entre duas interfaces diferentes. O __Adapter__ envolve o objeto existente e fornece uma interface compatível com o cliente facilitando a integração de classes incompatíveis sem modificar seu código original.
-=======
 O padrão Adapter é usado aqui para oferecer um contrato estável (`LLMProvider`) que o restante do domínio consome, enquanto a implementação concreta (OpenAI, Gemini, mock, etc.) pode variar. A `LLMConfiguration` escolhe qual adapter injetar com base em propriedade (`app.llm.provider`).
 
 ## Objetivo
@@ -251,36 +237,16 @@ Desvantagens / pontos a melhorar:
 
 | Versão | Alteração | Responsável | Data |
 | - | - | - | - |
-| 1.1 | Revisão do README para refletir os adapters reais (`llm`), exemplos e recomendações | Mateus Bastos | 23/10/2025 |
+| 1.0 | Elaboração dos códigos | Leo Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Felipe das Neves | 22/10/2025 |
 
 
 
 
 
 
->>>>>>> Stashed changes
 
 
-## Diagrama UML
 
-
----
-## Referências Bibliográficas
-
-- FREEMAN, Eric et al. __Use A Cabeça Padrões E Projetos.__ Rio de Janeiro: Alta Books, 2007.
-- GAMMA, E. et al. __Padrões de projeto : soluções reutilizáveis de software orientado a objetos.__ Porto Alegre: Bookman, 2006.
-
-<<<<<<< Updated upstream
----
-
-## Histórico de Versões
-
-| Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
-| :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Documentação e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
-
-
-=======
->>>>>>> Stashed changes
 
 
