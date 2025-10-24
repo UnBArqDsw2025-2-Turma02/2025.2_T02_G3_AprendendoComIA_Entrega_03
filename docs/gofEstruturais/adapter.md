@@ -72,7 +72,7 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
 <div align="center">
     Figura 1 (Adapter): Modelagem UML
     <br>
-    <img src="../assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
     <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
     <br>
