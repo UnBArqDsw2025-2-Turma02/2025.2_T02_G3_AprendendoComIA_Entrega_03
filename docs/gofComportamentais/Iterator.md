@@ -484,3 +484,4 @@ A implementação das classes do Iterator utilizando o padrão Iterator atendeu 
 | - | - | - | - |
 | 1.0 | Elaboração dos códigos | Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
 | 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.2 | Ajuste imagens dos códigos UML | Mateus Bastos| 23/10/2025 |
