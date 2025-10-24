@@ -423,9 +423,9 @@ O vídeo 1 abaixo mostra explicação e a execução do Adapter para LLMProvider
 <div align="center">
     Vídeo 1: Adapter para LLMProvider
     <br>
-    <iframe width="1321" height="743" src="https://www.youtube.com/embed/placeholder" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/tYnxU_JCnv4?si=i2tmRaZbr4bVYgnY" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
-    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <b>Autor:</b> Felipe, Leonardo e Vítor.
     <br>
 </div>
 
