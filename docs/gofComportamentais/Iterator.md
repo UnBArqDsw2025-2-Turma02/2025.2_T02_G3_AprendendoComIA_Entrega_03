@@ -505,7 +505,7 @@ A implementação das classes do Iterator utilizando o padrão Iterator atendeu 
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa | 22/10/2025 | | | |
-| `1.1` | Elaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa  | 22/10/2025 | | | |
-| `1.2` | Ajuste imagens dos códigos UML | [Mateus Bastos]() e Felipe das Neves]() | 22/10/2025 | | | |
-| `1.3` | Adição do vídeo de explicação e execução | [Vítor Bessa](Bessazs) | 22/10/2025 | | | |
+| `1.0` | Elaboração dos códigos | Leonardo de Melo, Vitor Bessa | 22/10/2025 | | | |
+| `1.1` | Elaboração da documentação | Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa  | 22/10/2025 | | | |
+| `1.2` | Ajuste imagens dos códigos UML | Mateus Bastos e Felipe das Neves | 22/10/2025 | | | |
+| `1.3` | Adição do vídeo de explicação e execução | Vítor Bessa | 22/10/2025 | | | |
