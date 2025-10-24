@@ -703,5 +703,6 @@ O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUti
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.1` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.2` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
+| `1.1` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa  | 22/10/2025 | | | |
+| `1.2` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso)  | 22/10/2025 | | | |
+| `1.3` | Modelagem da UML | [ Mateus Bastos](https://github.com/SamuelAfonso) e Felipe das Neves]() | 22/10/2025 | | | |
