@@ -953,13 +953,7 @@ package com.ailinguo.facade;import java.util.HashMap;import com.ailinguo.dto.Use
 
 ## Vídeo de Apresentação
 
-> **Link direto (SharePoint/Stream)** — pode exigir login institucional da UnB:  
-> https://unbbr-my.sharepoint.com/personal/231026859_aluno_unb_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F231026859%5Faluno%5Funb%5Fbr%2FDocuments%2FGrava%C3%A7%C3%B5es%2FReuni%C3%A3o%20com%20Leticia%20Da%20Silva%20Monteiro%2D20251024%5F095116%2DGrava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E416c77bb%2Dbaea%2D44b8%2Db830%2Dfff32e90f23c&isDarkMode=true
-
-**Botão clicável:**  
-[▶️ Assistir ao vídeo (Facade)](https://unbbr-my.sharepoint.com/personal/231026859_aluno_unb_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F231026859%5Faluno%5Funb%5Fbr%2FDocuments%2FGrava%C3%A7%C3%B5es%2FReuni%C3%A3o%20com%20Leticia%20Da%20Silva%20Monteiro%2D20251024%5F095116%2DGrava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E416c77bb%2Dbaea%2D44b8%2Db830%2Dfff32e90f23c&isDarkMode=true)
-
-> *Observação:* Players externos (ex.: `<iframe>`) podem ser bloqueados pelo SharePoint/Stream. Recomendamos usar o link acima.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wbtYrTy4-JQ?si=k_cRQ3imicFjRKlN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
