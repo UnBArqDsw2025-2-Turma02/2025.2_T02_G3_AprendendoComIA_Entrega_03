@@ -98,7 +98,7 @@ Nesse contexto, o projeto **Aprendendo com IA** busca preencher essa lacuna, ofe
 
 ## Screenshots da Terceira Entrega
 
-### Diagrama de Componentes
+### UML Adapter
 
 ![componentes](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png)
 
