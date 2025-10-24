@@ -39,6 +39,34 @@ Os controllers da aplicação (`AuthController`, `UserProfileController`, `TaskC
 
 Para a construção do padrão Facade, foram utilizados como referência alguns arquivos que serviram como base de estudo. Entre esses arquivos, destacam-se diagramas e outros materiais que auxiliaram na análise e no entendimento da estrutura necessária.
 
+<div align="center">
+    Figura 1 (Facade): Modelagem UML
+    <br>
+    <img src="../assets/img.facade/Fluxo de como a Tarefa funciona entrada e saída.png" alt="Fluxo de como a Tarefa funciona" width="800">
+    <br>
+    <b>Autores:</b> Arthur - Emivalto - Letícia - Luiz - Samuel.
+    <br>
+</div>
+
+<div align="center">
+    Figura 1 (Facade): Modelagem UML
+    <br>
+    <img src="../assets/img.facade/uml classes explicada do facade.png" alt="UML Classes explicada do facade" width="800">
+    <br>
+    <b>Autores:</b> Arthur - Emivalto - Letícia - Luiz - Samuel.
+    <br>
+</div>
+
+<div align="center">
+    Figura 1 (Facade): Modelagem UML
+    <br>
+    <img src="../assets/img.facade/Uml com o fluxo do usuário facade.png" alt="UML com o fluxo do usuário facade" width="800">
+    <br>
+    <b>Autores:</b> Arthur - Emivalto - Letícia - Luiz - Samuel.
+    <br>
+</div>
+
+
 [Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
 
 
@@ -79,5 +107,6 @@ Para a construção do padrão Facade, foram utilizados como referência alguns 
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Documentação e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
 | `1.1` | Adição da implementação específica (AILinguoFacade única), diagrama UML atualizado e seção de Benefícios/Considerações. |  [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 | | | |
+| `1.2` | Adição do diagrama UML | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr)  | 23/10/2025 | | | |
 
 

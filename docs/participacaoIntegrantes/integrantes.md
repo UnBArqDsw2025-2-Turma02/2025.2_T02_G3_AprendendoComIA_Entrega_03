@@ -79,7 +79,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
 | [Arthur Carvalho Leite](https://github.com/arthurlleite) | Documentação do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
-| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| | | |
+| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Código e Documentação do padrão Obaserver | Excelente | [Observer](../gofComportamentais/observer.md)|
 | [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
 | [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
