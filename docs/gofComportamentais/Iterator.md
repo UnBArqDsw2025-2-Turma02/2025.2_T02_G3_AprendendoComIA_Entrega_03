@@ -71,7 +71,7 @@ Abaixo o espaço para o seu diagrama UML para o Iterator do VocabularyWord:
 <div align="center">
     Figura 1 (Iterator): Modelagem UML do Padrão Iterator para VocabularyWord
     <br>
-    <img src="../assets/img.iterator/iteratorUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="assets/img.iterator/iteratorUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
@@ -212,7 +212,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 2: Interface IIterator.java
     <br>
-    <img src="../assets/img.iterator/iteratorIMG.png" width="1000">
+    <img src="assets/img.iterator/iteratorIMG.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
@@ -230,7 +230,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 4: Classe VocabularyWordCollection.java
     <br>
-    <img src="../assets/img.iterator/VocabularyWordCollection.png" width="1000">
+    <img src="assets/img.iterator/VocabularyWordCollection.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
@@ -239,7 +239,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 5: Classe VocabularyWordIterator.java
     <br>
-    <img src="../assets/img.iterator/VocabularyWordIterator.png" width="1000">
+    <img src="assets/img.iterator/VocabularyWordIterator.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
@@ -411,21 +411,31 @@ public class VocabularyIteratorTest {
 
 
 <b> Autores: </b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
-
 ##### Imagem do código no VSCODE
 
-A figura 6 abaixo ilustra a estrutura da classe VocabularyIteratorTest.java no ambiente de desenvolvimento VSCode.
+As figuras 7 e 8 ilustram a estrutura da classe VocabularyIteratorTest.java no ambiente de desenvolvimento VSCode.
 
 <div align="center">
-    Figura 6: Classe de Teste VocabularyIteratorTest.java
+    Figura 7: Classe de Teste VocabularyIteratorTest.java (Parte 1)
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=VocabularyIteratorTest+Class" width="1000">
+    <img src="assets/img.iterator/iteratorTest1.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
 </details>
+
+---
+
+<div align="center">
+    Figura 8: Classe de Teste VocabularyIteratorTest.java (Parte 2/Continuação)
+    <br>
+    <img src="assets/img.iterator/iteratorTest2.png" width="1000">
+    <br>
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
+    <br>
+</div>
 
 ## Vídeo Explicação e Execução do Iterator para VocabularyWord
 

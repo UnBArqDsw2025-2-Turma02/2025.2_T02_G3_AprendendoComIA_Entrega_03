@@ -72,12 +72,11 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
 <div align="center">
     Figura 1 (Adapter): Modelagem UML
     <br>
-    <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="assets/adapterUML.jpeg" alt="Modelagem UML do Adapter para LLMProvider" width="800">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
-
 ## Implementação das Classes do Adapter
 
 As classes do Adapter foram implementadas no pacote com.ailinguo.llm para representar o sistema de adaptação de provedores LLM da plataforma. Elas contêm interfaces bem definidas para adaptação, implementações concretas para diferentes provedores, e configuração para seleção dinâmica.
