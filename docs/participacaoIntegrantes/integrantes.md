@@ -10,17 +10,17 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
-| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Modelagem do Diagrama de Classes | Excelente | [Diagrama de Classes](modelagemEstatica/diagramaDeClasses.md) |
-| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Modelagem do Diagrama de Classes | Excelente | [Diagrama de Classes](modelagemEstatica/diagramaDeClasses.md) |
-| [Felipe das Neves](https://github.com/FelipeFreire-gf) | Modelagem do Diagrama de Componentes | Excelente | [Diagrama de Componentes](modelagemEstatica/diagramaDeComponentes.md) |
-| [Gabriel Lima](https://github.com/gabriel-lima258) | Modelagem do Diagrama de Componentes | Excelente | [Diagrama de Componentes](modelagemEstatica/diagramaDeComponentes.md) |
-| [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Componentes e Modelagem do Diagrama de Classes | Excelente | [Diagrama de Componentes](modelagemEstatica/diagramaDeComponentes.md), [Diagrama de Classes](modelagemEstatica/diagramaDeClasses.md) |
-| [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Componentes | Excelente | [Diagrama de Componentes](modelagemEstatica/diagramaDeComponentes.md) |
+| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Código do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
+| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Documentação do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
+| [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
+| [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
+| [Leonardo de Melo Lima](https://github.com/leozinlima) | Código e Documentação do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
+| [Mateus Bastos](https://github.com/MateuSansete)| UML do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Prototype" | Excelente| [Prototype](gofCriacionais/prototype.md)|
-| [Vitor Bessa](https://github.com/Bessazs) | | | |
-| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Implementação| Excelente | [Diagrama de Implementação](modelagemEstatica/diagramaDeImplantacao.md)|
-| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Implementação| Excelente | [Diagrama de Implementação](modelagemEstatica/diagramaDeImplantacao.md)|
+| [Samuel Afonso](https://github.com/SamuelAfonso) | Documentação do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
+| [Vitor Bessa](https://github.com/Bessazs) | Código e Documentação do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
+| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | UML do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
+| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Código do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
 
 <div align="center"> 
 <p>Autores:
@@ -44,17 +44,17 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
-| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Modelagem do Diagrama de Sequência | Excelente | [Diagrama de Sequência](modelagemDinamica/diagramaDeSequencia.md) |
-| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Ajustes no Diagrama de Sequência | Boa |[Diagrama de Sequência](../modelagemDinamica/diagramaDeSequencia.md) |
-| [Felipe das Neves](https://github.com/FelipeFreire-gf) | Modelagem do Diagrama de Atividades| Excelente | [Diagrama de Atividades](modelagemDinamica/diagramaDeAtividades.md) |
-| [Gabriel Lima](https://github.com/gabriel-lima258) | Modelagem do Diagrama de Atividades | Excelente | [Diagrama de Atividades](modelagemDinamica/diagramaDeAtividades.md) |
-| [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Estados | Excelente | [Diagrama de Estados](modelagemDinamica/diagramaDeEstados.md) |
-| [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Estados | Excelente | [Diagrama de Estados](modelagemDinamica/diagramaDeEstados.md) |
+| [Arthur Carvalho Leite](https://github.com/arthurlleite) | UML do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md) |
+| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Código e Documentação do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md) |
+| [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
+| [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
+| [Leonardo de Melo Lima](https://github.com/leozinlima) | Código e Documentação do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
+| [Mateus Bastos](https://github.com/MateuSansete)| UML do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Adapter" e "Facade" | Excelente| [Adapter](gofEstruturais/adapter.md), [Facade](gofEstruturais/facade.md)|
-| [Vitor Bessa](https://github.com/Bessazs) | | | |
-| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Estados| Excelente | [Diagrama de Estados](modelagemDinamica/diagramaDeEstados.md) |
-| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Comunicação | Excelente | [Diagrama de Comunicação](modelagemDinamica/diagramaDeComunicacao.md) |
+| [Samuel Afonso](https://github.com/SamuelAfonso) | Código e Documentação do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md) |
+| [Vitor Bessa](https://github.com/Bessazs) | Código e Documentação do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
+| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | | | |
+| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | | | |
 
 <div align="center"> 
 <p>Autores:
@@ -78,17 +78,17 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
-| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Modelagem do Diagrama de Casos de Uso | Excelente |  [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
-| [Emivalto Da Costa](https://github.com/EmivaltoJrr)|  |  |  |
-| [Felipe das Neves](https://github.com/FelipeFreire-gf) | Modelagem do Diagrama de Pacotes | Excelente | [Diagrama de Pacotes](ModelagemOrganizacional/diagramaDePacotes.md) |
-| [Gabriel Lima](https://github.com/gabriel-lima258) | Modelagem do Diagrama de Pacotes | Excelente | [Diagrama de Pacotes](ModelagemOrganizacional/diagramaDePacotes.md) |
-| [Leonardo de Melo Lima](https://github.com/leozinlima) | Modelagem do Diagrama de Casos de Uso | Excelente | [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
-| [Mateus Bastos](https://github.com/MateuSansete)| Modelagem do Diagrama de Casos de Uso | Excelente | [Diagrama de Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
-| [Pedro Fonseca Cruz](https://github.com/pfc15) | | |  |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | Modelagem e Formatação da Aba "Mediator" | Excelente| [Mediator](gofComportamentais/mediator.md)|
-| [Vitor Bessa](https://github.com/Bessazs) | | | |
-| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Modelagem do Diagrama de Casos de Uso | Excelente |[Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
-| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Modelagem do Diagrama de Casos de Uso | Excelente |[Casos de Uso](ModelagemOrganizacional/diagramaDeCasoDeUso.md) |
+| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Documentação do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
+| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| | | |
+| [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
+| [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
+| [Leonardo de Melo Lima](https://github.com/leozinlima) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
+| [Mateus Bastos](https://github.com/MateuSansete)| UML do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
+| [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
+| [Samuel Afonso](https://github.com/SamuelAfonso) | | | |
+| [Vitor Bessa](https://github.com/Bessazs) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
+| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Código e Documentação do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
+| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | UML e Código do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
 
 <div align="center"> 
 <p>Autores:
@@ -113,8 +113,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Modelagem inicial do documento. | [Felipe das Neves](https://github.com/FelipeFreire-gf) | 12/09/2025 | | | |
-| `1.1` | Incersão das contribuições da equipe: componentes, atividades e pacotes | [Felipe das Neves](https://github.com/FelipeFreire-gf) | 21/09/2025 | | | |
 | `1.2` | Incersão das atividades realizadas | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 21/09/2025 | | | |
 | `1.3` | Incersão das atividades realizadas | [Arthur Carvalho](https://github.com/arthurlleite)  | 21/09/2025 | | | |
-| `1.2` | Corrigindo links | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 22/09/2025 | | | |
-
+| `1.4` | Corrigindo links | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 22/09/2025 | | | |
+| `1.5` | Incersão das atividades realizadas| [Felipe das Neves](https://github.com/FelipeFreire-gf)  | 23/09/2025 | | | |

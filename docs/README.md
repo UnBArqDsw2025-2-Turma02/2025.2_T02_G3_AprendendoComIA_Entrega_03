@@ -96,13 +96,13 @@ Diversos aplicativos já exploram esse potencial. O [Duolingo](https://www.duoli
 Nesse contexto, o projeto **Aprendendo com IA** busca preencher essa lacuna, oferecendo uma plataforma que combina **gamificação**, **conteúdo adaptativo** e um **tutor de conversação inteligente**, tornando o aprendizado de inglês mais **personalizado, acessível e motivador**.
 
 
-## Screenshots da Segunda Entrega
+## Screenshots da Terceira Entrega
 
-### Diagrama de Componentes
+### UML Adapter
 
-![componentes](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_02/refs/heads/main/docs/modelagemEstatica/assets/componentes.png)
+![componentes](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png)
 
-<center> Autor(a): <a href="https://github.com/leozinlima" target = "_blank">Gabriel Lima</a>, <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a> e <a href="https://github.com/FelipeFreire-gf" target = "_blank">Mateus Bastos</a></center>
+<center> Autor(a): <a href="https://github.com/gabriel-lima258" target = "_blank">Gabriel Lima</a>, <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a>, <a href="https://github.com/MateuSansetef" target = "_blank">Mateus Bastos</a> e <a href="https://github.com/bessazs" target = "_blank">Vitor Bessa</a></center>
 
 ### Diagrama de Atividades
 
