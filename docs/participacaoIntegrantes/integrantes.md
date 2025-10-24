@@ -45,7 +45,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
 | [Arthur Carvalho Leite](https://github.com/arthurlleite) | UML do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md) |
-| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Código e Documentação do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md) |
+| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Código e Documentação do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md)  |
 | [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
 | [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Código e Documentação do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
@@ -53,8 +53,8 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
 | [Samuel Afonso](https://github.com/SamuelAfonso) | Código e Documentação do padrão Facade | Excelente | [Facade](../gofEstruturais/facade.md) |
 | [Vitor Bessa](https://github.com/Bessazs) | Código e Documentação do padrão Adapter | Excelente | [Adapter](../gofEstruturais/adapter.md) |
-| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | | | |
-| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | | | |
+| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Código e Documentação | Excelente | [Facade](../gofEstruturais/facade.md) |
+| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | Código e Documentação | Excelente | [Facade](../gofEstruturais/facade.md) |
 
 <div align="center"> 
 <p>Autores:
@@ -78,17 +78,17 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
-| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Documentação do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
-| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| | | |
+| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Documentação do padrão Mediator | Excelente | [Observer](../gofComportamentais/observer.md) |
+| [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Código e Documentação do padrão Observer | Excelente | [Observer](../gofComportamentais/observer.md)|
 | [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
 | [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
 | [Leonardo de Melo Lima](https://github.com/leozinlima) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
 | [Mateus Bastos](https://github.com/MateuSansete)| UML do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
 | [Pedro Fonseca Cruz](https://github.com/pfc15) | | | |
-| [Samuel Afonso](https://github.com/SamuelAfonso) | | | |
+| [Samuel Afonso](https://github.com/SamuelAfonso) |Documentação do padrão Observer | Excelente | [Observer](../gofComportamentais/observer.md)|
 | [Vitor Bessa](https://github.com/Bessazs) | Código e Documentação do padrão Iterator | Excelente |  [Iterator](../gofComportamentais/Iterator.md) |
-| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Código e Documentação do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
-| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | UML e Código do padrão Mediator | Excelente | [Mediator](../gofComportamentais/mediator.md) |
+| [Luiz Henrique Soares ](https://github.com/luizh-gsoares) | Código e Documentação do padrão Mediator | Excelente | [Observer](../gofComportamentais/observer.md) |
+| [Letícia Monteiro ](https://github.com/leticiamonteiroo) | UML e Código do padrão Mediator | Excelente | [Observer](../gofComportamentais/observer.md) |
 
 <div align="center"> 
 <p>Autores:

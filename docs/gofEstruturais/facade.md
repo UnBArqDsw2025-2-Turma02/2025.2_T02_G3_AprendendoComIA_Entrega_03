@@ -53,6 +53,25 @@ Controllers (`AuthController`, `UserProfileController`, `TaskController`, `Progr
 ### Figura e Crédito
 
 > **Fonte/Autoria do UML:** [Arthur Carvalho Leite](https://github.com/arthurlleite).
+---
+# Fluxo de como a Tarefa funciona
+
+![UML Fluxo de como a Tarefa funciona](../assets/img.facade/Fluxo%20de%20como%20a%20Tarefa%20funciona%20entrada%20e%20saída.png)
+
+---
+
+# Classes explicada do facade
+
+![UML Classes explicada do facade](../assets/img.facade/uml%20classes%20explicada%20do%20facade.png)
+
+---
+# Fluxo do usuário facade
+
+![UML com o fluxo do usuário facade](../assets/img.facade/Uml%20com%20o%20fluxo%20do%20usuário%20facade.png)
+
+---
+
+[Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
 
 ### Figuras (RAW) e Explicações
 
@@ -95,6 +114,8 @@ Controllers (`AuthController`, `UserProfileController`, `TaskController`, `Progr
 ---
 
 ## Participantes e Mapeamento para o Código
+
+## Benefícios e Considerações
 
 - **`IAILinguoFacade`** → Interface pública que define as operações expostas.
 - **`AILinguoFacade`** → Implementação concreta; injeta e orquestra os serviços.
@@ -148,7 +169,7 @@ Controllers (`AuthController`, `UserProfileController`, `TaskController`, `Progr
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Documentação inicial e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 |  |  |  |
-| `1.1` | Definição da **Facade única** (AILinguoFacade) e seção de benefícios/considerações | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 |  |  |  |
-| `1.2` | **Criação do UML do Facade** (Figuras 1–3) | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
-| `1.3` | **Atualização do documento**: seção “Figuras (RAW) e Explicações)”, vídeo (SharePoint) e ajustes (padrão Prototype) | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
+| `1.0` | Documentação e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
+| `1.1` | Adição da implementação específica (AILinguoFacade única), diagrama UML atualizado e seção de Benefícios/Considerações. |  [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 | | | |
+| `1.2` | Adição do diagrama UML | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr)  | 23/10/2025 | | | |
+

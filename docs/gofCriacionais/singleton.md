@@ -80,6 +80,19 @@ Descrição do diagrama (resumo):
 
 ---
 
+## Vídeo explicação do diagrama UML Singleton
+
+
+<div align="center">
+    Vídeo 1
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/6f9di0lsLus" title="Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Mateus Bastos.
+    <br>
+</div
+
+---
 ## Participantes e Mapeamento para o Código
 
 - **Singletons do projeto:**
@@ -667,6 +680,24 @@ Principais verificações implementadas:
 
 ---
 
+## Vídeo Explicação e Execução do Singleton
+
+O vídeo 2 abaixo mostra explicação e a execução do Adapter para LLMProvider
+
+<div align="center">
+    Vídeo 4
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/Q5IBWVOkwNs" title="Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Gabriel Lima.
+    <br>
+</div>
+
+
+
+
+
+---
 ## Vantagens e Desvantagens
 
 ### Vantagens
@@ -703,6 +734,5 @@ O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUti
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.1` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa  | 22/10/2025 | | | |
-| `1.2` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso)  | 22/10/2025 | | | |
-| `1.3` | Modelagem da UML | [ Mateus Bastos](https://github.com/SamuelAfonso) e Felipe das Neves]() | 22/10/2025 | | | |
+| `1.1` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
+| `1.2` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
