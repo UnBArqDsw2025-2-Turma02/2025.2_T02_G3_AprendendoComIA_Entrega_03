@@ -98,9 +98,9 @@ Nesse contexto, o projeto **Aprendendo com IA** busca preencher essa lacuna, ofe
 
 ## Screenshots da Segunda Entrega
 
-### Diagrama de Componentes
+### UML Adapter
 
-![componentes](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_02/refs/heads/main/docs/modelagemEstatica/assets/componentes.png)
+![componentes]([https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_02/refs/heads/main/docs/modelagemEstatica/assets/componentes.png](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png))
 
 <center> Autor(a): <a href="https://github.com/leozinlima" target = "_blank">Gabriel Lima</a>, <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a> e <a href="https://github.com/FelipeFreire-gf" target = "_blank">Mateus Bastos</a></center>
 
