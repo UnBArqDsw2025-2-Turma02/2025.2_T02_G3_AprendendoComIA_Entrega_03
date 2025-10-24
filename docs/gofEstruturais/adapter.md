@@ -74,7 +74,7 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
     <br>
     <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
 
@@ -237,47 +237,54 @@ public class LLMConfiguration {
 ##### Imagem do código no VSCODE
 
 As figuras 2, 3, 4, 5 e 6 abaixo ilustram a estrutura das classes do Adapter no ambiente de desenvolvimento VSCode.
-
 <div align="center">
     Figura 2: Interface LLMProvider.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/2196F3/FFFFFF?text=LLMProvider+Interface" width="1000">
+    <img src="assets/img.adapter/LLMProvider.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 3: Classe OpenAIAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF9800/FFFFFF?text=OpenAIAdapter+Class" width="1000">
+    <img src="assets/img.adapter/OpenAIAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 4: Classe MockAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=MockAdapter+Class" width="1000">
+    <img src="assets/img.adapter/MockAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 5: Classe GeminiAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/4CAF50/FFFFFF?text=GeminiAdapter+Class" width="1000">
+    <img src="assets/img.adapter/GeminiAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
 
+---
+
 <div align="center">
     Figura 6: Classe LLMConfiguration.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF5722/FFFFFF?text=LLMConfiguration+Class" width="1000">
+    <img src="assets/img.adapter/LLMConfiguration.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
@@ -400,21 +407,31 @@ class AdapterTest {
 
 
 <b> Autor: </b> Gabriel Lima e Mateus Bastos.
-
 ##### Imagem do código no VSCODE
 
-A figura 7 abaixo ilustra a estrutura da classe AdapterTest.java no ambiente de desenvolvimento VSCode.
+A figura 7 abaixo ilustra a primeira parte da classe AdapterTest.java no ambiente de desenvolvimento VSCode, e a figura 8 a sua continuação.
 
 <div align="center">
-    Figura 7: Classe de Teste AdapterTest.java
+    Figura 7: Classe de Teste AdapterTest.java (Parte 1)
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=AdapterTest+Class" width="1000">
+    <img src="assets/img.adapter/adapterTest1.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
 
 </details>
+
+---
+
+<div align="center">
+    Figura 8: Classe de Teste AdapterTest.java (Parte 2/Continuação)
+    <br>
+    <img src="assets/img.adapter/adapterTest2.png" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
 
 ## Vídeo Explicação e Execução do Adapter para LLMProvider
 
@@ -423,9 +440,9 @@ O vídeo 1 abaixo mostra explicação e a execução do Adapter para LLMProvider
 <div align="center">
     Vídeo 1: Adapter para LLMProvider
     <br>
-    <iframe width="1321" height="743" src="https://www.youtube.com/embed/placeholder" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/tYnxU_JCnv4?si=i2tmRaZbr4bVYgnY" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
-    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <b>Autor:</b> Felipe, Leonardo e Vítor.
     <br>
 </div>
 
@@ -467,6 +484,11 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 
 ## Histórico de Versões
 
+## Histórico de versão
+
+| Versão | Alteração | Responsável | Data |
+| - | - | - | - |
+| 1.0 | Elaboração dos códigos e documentação | Felipe das Neves, Gabriel Lima e Mateus Bastos | 23/10/2025 |
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima e Mateus Bastos ]() | 23/10/2025 | | | |
