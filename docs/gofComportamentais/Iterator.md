@@ -71,9 +71,9 @@ Abaixo o espaço para o seu diagrama UML para o Iterator do VocabularyWord:
 <div align="center">
     Figura 1 (Iterator): Modelagem UML do Padrão Iterator para VocabularyWord
     <br>
-    <img src="https://via.placeholder.com/800x600/4CAF50/FFFFFF?text=Diagrama+UML+Iterator+VocabularyWord" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="../assets/img.iterator/iteratorUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
 
@@ -96,7 +96,7 @@ Abaixo o código para as classes do Iterator:
     }
 
 
-<b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
+<b> Autores: </b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
 
 </details>
 
@@ -115,7 +115,7 @@ Abaixo o código para as classes do Iterator:
     }
 
 
-<b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
+<b> Autores: </b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
 
 </details>
 
@@ -162,7 +162,7 @@ Abaixo o código para as classes do Iterator:
         }
 
 
-<b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
+<b> Autores: </b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
 
 </details>
 
@@ -201,7 +201,7 @@ Abaixo o código para as classes do Iterator:
     }
 
 
-<b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
+<b> Autores: </b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
 
 </details>
 
@@ -212,36 +212,36 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 2: Interface IIterator.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/2196F3/FFFFFF?text=IIterator+Interface" width="1000">
+    <img src="../assets/img.iterator/iteratorIMG.png" width="1000">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
 
 <div align="center">
     Figura 3: Interface VocabularyCollection.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF9800/FFFFFF?text=VocabularyCollection+Interface" width="1000">
+    <img src="../assets/img.iterator/VocabularyCollection.png" width="1000">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
 <div align="center">
     Figura 4: Classe VocabularyWordCollection.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=VocabularyWordCollection+Class" width="1000">
+    <img src="../assets/img.iterator/VocabularyWordCollection.png" width="1000">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
 <div align="center">
     Figura 5: Classe VocabularyWordIterator.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/4CAF50/FFFFFF?text=VocabularyWordIterator+Class" width="1000">
+    <img src="../assets/img.iterator/VocabularyWordIterator.png" width="1000">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
@@ -410,7 +410,7 @@ public class VocabularyIteratorTest {
 }
 
 
-<b> Autores: </b> Gabriel, Leo, Mateus, Vitor, Felipe.
+<b> Autores: </b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
 
 ##### Imagem do código no VSCODE
 
@@ -421,7 +421,7 @@ A figura 6 abaixo ilustra a estrutura da classe VocabularyIteratorTest.java no a
     <br>
     <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=VocabularyIteratorTest+Class" width="1000">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
@@ -436,7 +436,7 @@ O vídeo 1 abaixo mostra explicação e a execução do Iterator para Vocabulary
     <br>
     <iframe width="1321" height="743" src="https://www.youtube.com/embed/placeholder" title="AILinguo: Explicação e Execução do Iterator para VocabularyWord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
@@ -482,5 +482,6 @@ A implementação das classes do Iterator utilizando o padrão Iterator atendeu 
 
 | Versão | Alteração | Responsável | Data |
 | - | - | - | - |
-| 1.0 | Elaboração dos códigos | Leo Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
-| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Leo Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.0 | Elaboração dos códigos | Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.2 | Ajuste imagens dos códigos UML | Mateus Bastos| 23/10/2025 |

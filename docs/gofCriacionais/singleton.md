@@ -687,8 +687,10 @@ O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUti
 
 ---
 
-## Histórico de Versões
+## Histórico de versão
 
-| Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
-| :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Singleton clássico no AILinguo: implementação em Group e JwtUtil, testes e thread-safety | [Leonardo de Melo Lima](https://github.com/leozinlima), [Vitor Bessa](https://github.com/Bessazs) | 23/10/2025 | | | |
+| Versão | Alteração | Responsável | Data |
+| - | - | - | - |
+| 1.0 | Elaboração dos códigos | Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
+| 1.2 | Ajuste imagens dos códigos e UML | Mateus Bastos | 23/10/2025 |

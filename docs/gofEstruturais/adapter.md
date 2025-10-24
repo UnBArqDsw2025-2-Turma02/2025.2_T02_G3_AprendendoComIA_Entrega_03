@@ -61,7 +61,7 @@ A implementação do padrão Adapter para a interface LLMProvider foi realizada 
 
 No contexto do "AILinguo", as classes do Adapter devem encapsular suas funcionalidades (como adaptação de interfaces, delegação de chamadas e configuração de provedores) e a lógica para gerenciá-los, enquanto o padrão Adapter controla a unificação e a adaptação.
 
-## Desenvolvimento e Implementação
+# Desenvolvimento e Implementação
 
 A seguir, são detalhadas a modelagem e a implementação das classes do Adapter e sua interação com outras partes do sistema.
 
@@ -70,11 +70,11 @@ A seguir, são detalhadas a modelagem e a implementação das classes do Adapter
 Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
 
 <div align="center">
-    Figura 1 (Adapter): Modelagem UML do Padrão Adapter para LLMProvider
+    Figura 1 (Iterator): Modelagem UML do Padrão Iterator para VocabularyWord
     <br>
-    <img src="https://via.placeholder.com/800x600/4CAF50/FFFFFF?text=Diagrama+UML+Adapter+LLMProvider" alt="Modelagem UML do Adapter para LLMProvider" width="800">
+    <img src="../assets/adapterUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
-    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
     <br>
 </div>
 
