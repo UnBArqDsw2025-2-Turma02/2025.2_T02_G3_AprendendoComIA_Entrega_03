@@ -466,22 +466,18 @@ A escolha de utilizar o padrão Iterator para as classes de vocabulário foi pon
 
 A implementação das classes do Iterator utilizando o padrão Iterator atendeu ao requisito de fornecer uma interface uniforme para percorrer coleções de vocabulário e encapsular a estrutura interna das coleções. A aplicação do padrão Iterator nas classes de vocabulário demonstra como este padrão pode ser efetivamente utilizado para gerenciar acesso sequencial a coleções em aplicações Spring Boot, garantindo flexibilidade e encapsulamento sobre operações de iteração.
 
-## Referências
+## Bibliogaria
 
-[1] REFACTORING GURU. Iterator. Refactoring.Guru, [s.d.]. Disponível em: https://refactoring.guru/pt-br/design-patterns/iterator. Acesso em: 27 maio 2025.
+> FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
 
-[2] GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+> GAMMA, E. et al. Padrões de projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2006.
 
-[3] DEVMEDIA. Padrão de Projeto Iterator em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-iterator-em-java/26395. Acesso em: 27 maio 2025.
-
-[4] THIENGO, Vinícius. Padrão de Projeto: Iterator. Thiengo, [s.d.]. Disponível em: https://www.thiengo.com.br/padrao-de-projeto-iterator. Acesso em: 27 maio 2025.
-
-[5] SPRING FRAMEWORK. Collections and Iterators. Spring.io, [s.d.]. Disponível em: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#collections. Acesso em: 27 maio 2025.
+> Refactoring.Guru – Iterator: https://refactoring.guru/pt-br/design-patterns/iterator
 
 ## Histórico de versão
 
-| Versão | Alteração | Responsável | Data |
-| - | - | - | - |
-| 1.0 | Elaboração dos códigos | Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
-| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
-| 1.2 | Ajuste imagens dos códigos UML | Mateus Bastos| 23/10/2025 |
+| Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
+| :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
+| `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
+| `1.0` | Elaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
+| `1.0` | Ajuste imagens dos códigos UML | [Mateus Bastos]() | 22/10/2025 | | | |
