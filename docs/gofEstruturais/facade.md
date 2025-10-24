@@ -981,3 +981,4 @@ package com.ailinguo.facade;import java.util.HashMap;import com.ailinguo.dto.Use
 | `1.2` | **Criação do UML do Facade** (Figuras 1–3) | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
 | `1.3` | **Atualização do documento**: seção “Figuras (RAW) e Explicações)”, vídeo (SharePoint) e ajustes (padrão Prototype) | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
 | `1.4` | **Inclusão dos códigos do Facade** (controller, interface/implementação, testes) com explicações e _details_ | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
+| `1.5` | **Inclusão do Vídeo de Explicação** |  [Letícia Monteiro](https://github.com/LeticiaMonteiroo) | 24/10/2025 |  |  |  |

@@ -10,7 +10,7 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 | Nome do Membro | Contribuição | Significância da Contribuição para o Projeto | Comprobatórios Claros (com link) |
 |----------------|--------------|----------------------------------------------|-----------------------------------|
-| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Código do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
+| [Arthur Carvalho Leite](https://github.com/arthurlleite) | Código do padrão Prototype | Excelente | ![Prototype](../gofCriacionais/prototype.md) |
 | [Emivalto Da Costa](https://github.com/EmivaltoJrr)| Documentação do padrão Prototype | Excelente | [Prototype](../gofCriacionais/prototype.md) |
 | [Felipe das Neves](https://github.com/FelipeFreire-gf) | UML do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
 | [Gabriel Lima](https://github.com/gabriel-lima258) | Código e Documentação do padrão Singleton | Excelente | [Singleton](../gofCriacionais/singleton.md) |
