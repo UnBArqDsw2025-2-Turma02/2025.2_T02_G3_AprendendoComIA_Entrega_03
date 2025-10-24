@@ -32,9 +32,15 @@ A `AILinguoFacade` (e sua interface opcional `IAILinguoFacade`) expõe métodos 
 
 Os controllers da aplicação (`AuthController`, `UserProfileController`, `TaskController`, etc.) agora dependem primariamente da `AILinguoFacade`, reduzindo suas dependências diretas e simplificando sua lógica interna. Isso torna os controllers mais focados em receber requisições HTTP e retornar respostas, delegando a lógica de negócio para a Facade.
 
----
+[Link dos Commits](https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV2/commit/47c42d2203c5f6d595257934d04e602a7994d19b#diff-76f9c77ea2d3ec797247eebaa6c3b90117cdb99caafa38c8e57d857e601bed3e)
+
 
 ## Diagrama UML
+
+Para a construção do padrão Facade, foram utilizados como referência alguns arquivos que serviram como base de estudo. Entre esses arquivos, destacam-se diagramas e outros materiais que auxiliaram na análise e no entendimento da estrutura necessária.
+
+[Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
+
 
 ## Benefícios e Considerações
 
