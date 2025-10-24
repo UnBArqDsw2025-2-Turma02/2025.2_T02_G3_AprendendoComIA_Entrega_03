@@ -434,9 +434,9 @@ O vídeo 1 abaixo mostra explicação e a execução do Iterator para Vocabulary
 <div align="center">
     Vídeo 1: Iterator para VocabularyWord
     <br>
-    <iframe width="1321" height="743" src="https://www.youtube.com/embed/placeholder" title="AILinguo: Explicação e Execução do Iterator para VocabularyWord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/vim6iAUT1Rw?si=-pIlRTh9z-lVbvDK" title="AILinguo: Explicação e Execução do Iterator para VocabularyWord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
-    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Leonardo de Melo e Vitor.
     <br>
 </div>
 
