@@ -486,10 +486,9 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 
 ## Histórico de versão
 
-| Versão | Alteração | Responsável | Data |
-| - | - | - | - |
-| 1.0 | Elaboração dos códigos e documentação | Felipe das Neves, Gabriel Lima e Mateus Bastos | 23/10/2025 |
+
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima e Mateus Bastos ]() | 23/10/2025 | | | |
 | `1.1` | Complemento nos textos | [Felipe das Neves](FelipeFreire-gf) | 23/10/2025 | | | |
+| `1.2` | Adição do video de explicação e execução | [Vítor Bessa](Bessaz) | 23/10/2025 | | | |
