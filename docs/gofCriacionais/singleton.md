@@ -677,7 +677,7 @@ O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUti
 
 ---
 
-## Referências Bibliográficas
+## Bibliogaria
 
 > FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
 
@@ -689,8 +689,8 @@ O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUti
 
 ## Histórico de versão
 
-| Versão | Alteração | Responsável | Data |
-| - | - | - | - |
-| 1.0 | Elaboração dos códigos | Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
-| 1.1 | Eaboração da documentação | Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves | 22/10/2025 |
-| 1.2 | Ajuste imagens dos códigos e UML | Mateus Bastos | 23/10/2025 |
+| Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
+| :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
+| `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
+| `1.0` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
+| `1.0` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso) | 22/10/2025 | | | |

@@ -22,13 +22,14 @@ Isso promove um baixo acoplamento, pois o "subject" (Aluno/Pontuação) não pre
 
 ## Diagrama UML
 
-
+![UML Observer](../assets/gofcodes/UMLObserver.jpg)
 ---
 
-## Referências Bibliográficas
+## Bibliogaria
 
-- FREEMAN, Eric et al. __Use A Cabeça Padrões E Projetos.__ Rio de Janeiro: Alta Books, 2007.
-- GAMMA, E. et al. __Padrões de projeto : soluções reutilizáveis de software orientado a objetos.__ Porto Alegre: Bookman, 2006.
+> FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
+
+> GAMMA, E. et al. Padrões de projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2006.
 
 ---
 
@@ -38,3 +39,4 @@ Isso promove um baixo acoplamento, pois o "subject" (Aluno/Pontuação) não pre
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Documentação e formatação da aba.  | [Samuel Afonso](https://github.com/SamuelAfonso) | 23/10/2025 | | | |
 | `1.1` | Criação do documento para o padrão Observer e adição de exemplo prático. | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 | | | |
+| `1.2` | Adição da UML do Observer | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 23/10/2025 | | | |

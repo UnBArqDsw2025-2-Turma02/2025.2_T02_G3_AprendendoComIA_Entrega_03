@@ -74,7 +74,7 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
     <br>
     <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
 
@@ -237,47 +237,54 @@ public class LLMConfiguration {
 ##### Imagem do código no VSCODE
 
 As figuras 2, 3, 4, 5 e 6 abaixo ilustram a estrutura das classes do Adapter no ambiente de desenvolvimento VSCode.
-
 <div align="center">
     Figura 2: Interface LLMProvider.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/2196F3/FFFFFF?text=LLMProvider+Interface" width="1000">
+    <img src="assets/img.adapter/LLMProvider.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 3: Classe OpenAIAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF9800/FFFFFF?text=OpenAIAdapter+Class" width="1000">
+    <img src="assets/img.adapter/OpenAIAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 4: Classe MockAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=MockAdapter+Class" width="1000">
+    <img src="assets/img.adapter/MockAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 5: Classe GeminiAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/4CAF50/FFFFFF?text=GeminiAdapter+Class" width="1000">
+    <img src="assets/img.adapter/GeminiAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
 
+---
+
 <div align="center">
     Figura 6: Classe LLMConfiguration.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF5722/FFFFFF?text=LLMConfiguration+Class" width="1000">
+    <img src="assets/img.adapter/LLMConfiguration.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
@@ -400,21 +407,31 @@ class AdapterTest {
 
 
 <b> Autor: </b> Gabriel Lima e Mateus Bastos.
-
 ##### Imagem do código no VSCODE
 
-A figura 7 abaixo ilustra a estrutura da classe AdapterTest.java no ambiente de desenvolvimento VSCode.
+A figura 7 abaixo ilustra a primeira parte da classe AdapterTest.java no ambiente de desenvolvimento VSCode, e a figura 8 a sua continuação.
 
 <div align="center">
-    Figura 7: Classe de Teste AdapterTest.java
+    Figura 7: Classe de Teste AdapterTest.java (Parte 1)
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=AdapterTest+Class" width="1000">
+    <img src="assets/img.adapter/adapterTest1.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
 
 </details>
+
+---
+
+<div align="center">
+    Figura 8: Classe de Teste AdapterTest.java (Parte 2/Continuação)
+    <br>
+    <img src="assets/img.adapter/adapterTest2.png" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
 
 ## Vídeo Explicação e Execução do Adapter para LLMProvider
 
@@ -423,9 +440,9 @@ O vídeo 1 abaixo mostra explicação e a execução do Adapter para LLMProvider
 <div align="center">
     Vídeo 1: Adapter para LLMProvider
     <br>
-    <iframe width="1321" height="743" src="https://www.youtube.com/embed/placeholder" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/tYnxU_JCnv4?si=i2tmRaZbr4bVYgnY" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
-    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <b>Autor:</b> Felipe, Leonardo e Vítor.
     <br>
 </div>
 
@@ -451,26 +468,28 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 
 *Observação:* No contexto deste projeto e para a integração com diferentes provedores de LLM que requerem interfaces unificadas e configuração flexível, os benefícios de unificação e flexibilidade foram considerados preponderantes.
 
-## Conclusão
+---
 
-A implementação das classes do Adapter utilizando o padrão Adapter atendeu ao requisito de fornecer uma interface unificada para diferentes provedores de LLM e encapsular as implementações específicas de cada provedor. A aplicação do padrão Adapter nas classes de LLM demonstra como este padrão pode ser efetivamente utilizado para integrar sistemas externos em aplicações Spring Boot, garantindo flexibilidade e unificação sobre operações de LLM.
+## Bibliogaria
 
-## Referências
+> FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
 
-[1] REFACTORING GURU. Adapter. Refactoring.Guru, [s.d.]. Disponível em: https://refactoring.guru/pt-br/design-patterns/adapter. Acesso em: 27 maio 2025.
+> GAMMA, E. et al. Padrões de projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2006.
 
-[2] GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+> Refactoring.Guru – Adapter: https://refactoring.guru/pt-br/design-patterns/adapter
 
-[3] DEVMEDIA. Padrão de Projeto Adapter em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-adapter-em-java/26397. Acesso em: 27 maio 2025.
-
-[4] THIENGO, Vinícius. Padrão de Projeto: Adapter. Thiengo, [s.d.]. Disponível em: https://www.thiengo.com.br/padrao-de-projeto-adapter. Acesso em: 27 maio 2025.
-
-[5] SPRING FRAMEWORK. Configuration Classes. Spring.io, [s.d.]. Disponível em: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-java-configuration. Acesso em: 27 maio 2025.
+> DEVMEDIA. Padrão de Projeto Adapter em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-adapter-em-java/26397.
 
 ---
 
 ## Histórico de Versões
 
+## Histórico de versão
+
+| Versão | Alteração | Responsável | Data |
+| - | - | - | - |
+| 1.0 | Elaboração dos códigos e documentação | Felipe das Neves, Gabriel Lima e Mateus Bastos | 23/10/2025 |
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima e Mateus Bastos ]() | 23/10/2025 | | | |
+| `1.1` | Complemento nos textos | [Felipe das Neves](FelipeFreire-gf) | 23/10/2025 | | | |
