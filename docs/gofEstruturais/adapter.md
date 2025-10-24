@@ -491,3 +491,5 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 | `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima, Mateus Bastos, Vitor Bessa e Leonardo de Melo ]() | 23/10/2025 | | | |
 | `1.1` | Complemento nos textos | [Felipe das Neves](FelipeFreire-gf) | 23/10/2025 | | | |
 | `1.2` | Adição do video de explicação e execução | [Vítor Bessa](Bessaz), [Leonardo de Melo]() | 23/10/2025 | | | |
+| `1.3` | Modelagem da UML |  [ Gabriel Lima, Mateus Bastos, Vitor Bessa, Leonardo de Melo  e Felipe das Neves]()| 23/10/2025 | | | |
+
