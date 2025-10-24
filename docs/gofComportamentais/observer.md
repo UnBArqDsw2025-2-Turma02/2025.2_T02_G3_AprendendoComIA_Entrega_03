@@ -25,10 +25,11 @@ Isso promove um baixo acoplamento, pois o "subject" (Aluno/Pontuação) não pre
 
 ---
 
-## Referências Bibliográficas
+## Bibliogaria
 
-- FREEMAN, Eric et al. __Use A Cabeça Padrões E Projetos.__ Rio de Janeiro: Alta Books, 2007.
-- GAMMA, E. et al. __Padrões de projeto : soluções reutilizáveis de software orientado a objetos.__ Porto Alegre: Bookman, 2006.
+> FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
+
+> GAMMA, E. et al. Padrões de projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2006.
 
 ---
 

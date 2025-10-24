@@ -451,21 +451,17 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 
 *Observação:* No contexto deste projeto e para a integração com diferentes provedores de LLM que requerem interfaces unificadas e configuração flexível, os benefícios de unificação e flexibilidade foram considerados preponderantes.
 
-## Conclusão
+---
 
-A implementação das classes do Adapter utilizando o padrão Adapter atendeu ao requisito de fornecer uma interface unificada para diferentes provedores de LLM e encapsular as implementações específicas de cada provedor. A aplicação do padrão Adapter nas classes de LLM demonstra como este padrão pode ser efetivamente utilizado para integrar sistemas externos em aplicações Spring Boot, garantindo flexibilidade e unificação sobre operações de LLM.
+## Bibliogaria
 
-## Referências
+> FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
 
-[1] REFACTORING GURU. Adapter. Refactoring.Guru, [s.d.]. Disponível em: https://refactoring.guru/pt-br/design-patterns/adapter. Acesso em: 27 maio 2025.
+> GAMMA, E. et al. Padrões de projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2006.
 
-[2] GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional, 1994.
+> Refactoring.Guru – Adapter: https://refactoring.guru/pt-br/design-patterns/adapter
 
-[3] DEVMEDIA. Padrão de Projeto Adapter em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-adapter-em-java/26397. Acesso em: 27 maio 2025.
-
-[4] THIENGO, Vinícius. Padrão de Projeto: Adapter. Thiengo, [s.d.]. Disponível em: https://www.thiengo.com.br/padrao-de-projeto-adapter. Acesso em: 27 maio 2025.
-
-[5] SPRING FRAMEWORK. Configuration Classes. Spring.io, [s.d.]. Disponível em: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-java-configuration. Acesso em: 27 maio 2025.
+> DEVMEDIA. Padrão de Projeto Adapter em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-adapter-em-java/26397.
 
 ---
 
@@ -474,3 +470,4 @@ A implementação das classes do Adapter utilizando o padrão Adapter atendeu ao
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima e Mateus Bastos ]() | 23/10/2025 | | | |
+| `1.1` | Complemento nos textos | [Felipe das Neves](FelipeFreire-gf) | 23/10/2025 | | | |
