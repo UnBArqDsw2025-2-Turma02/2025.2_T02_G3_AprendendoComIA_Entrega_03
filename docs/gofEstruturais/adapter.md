@@ -77,6 +77,22 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
+
+
+---
+## Vídeo explicação do diagrama UML Adapter
+
+
+<div align="center">
+    Vídeo 2
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/76CuUeb5I2A" title="Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Mateus Bastos.
+    <br>
+</div>
+
+---
 ## Implementação das Classes do Adapter
 
 As classes do Adapter foram implementadas no pacote com.ailinguo.llm para representar o sistema de adaptação de provedores LLM da plataforma. Elas contêm interfaces bem definidas para adaptação, implementações concretas para diferentes provedores, e configuração para seleção dinâmica.

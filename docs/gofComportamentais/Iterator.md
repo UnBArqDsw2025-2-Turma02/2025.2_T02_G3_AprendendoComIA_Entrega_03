@@ -77,6 +77,23 @@ Abaixo o espaço para o seu diagrama UML para o Iterator do VocabularyWord:
     <br>
 </div>
 
+
+---
+## Vídeo explicação do diagrama UML Iterator
+
+
+<div align="center">
+    Vídeo 1
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/iCIbbvTkn2o" title="Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Mateus Bastos.
+    <br>
+</div>
+
+---
+
+
 ## Implementação das Classes do Iterator
 
 As classes do Iterator foram implementadas no pacote com.ailinguo.iterator para representar o sistema de iteração de vocabulário da plataforma. Elas contêm interfaces bem definidas para iteração, implementações concretas para gerenciar coleções e iteradores, e métodos para operações de iteração.
@@ -439,10 +456,10 @@ As figuras 7 e 8 ilustram a estrutura da classe VocabularyIteratorTest.java no a
 
 ## Vídeo Explicação e Execução do Iterator para VocabularyWord
 
-O vídeo 1 abaixo mostra explicação e a execução do Iterator para VocabularyWord
+O vídeo 2 abaixo mostra explicação e a execução do Iterator para VocabularyWord
 
 <div align="center">
-    Vídeo 1: Iterator para VocabularyWord
+    Vídeo 2: Iterator para VocabularyWord
     <br>
     <iframe width="1321" height="743" src="https://www.youtube.com/embed/vim6iAUT1Rw?si=-pIlRTh9z-lVbvDK" title="AILinguo: Explicação e Execução do Iterator para VocabularyWord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
