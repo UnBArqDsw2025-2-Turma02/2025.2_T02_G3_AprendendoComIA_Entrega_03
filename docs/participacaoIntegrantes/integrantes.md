@@ -116,4 +116,4 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 | `1.2` | Incersão das atividades realizadas | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 21/09/2025 | | | |
 | `1.3` | Incersão das atividades realizadas | [Arthur Carvalho](https://github.com/arthurlleite)  | 21/09/2025 | | | |
 | `1.4` | Corrigindo links | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 22/09/2025 | | | |
-| `1.5` | Incersão das atividades realizadas| [Felipe das Neves](https://github.com/FelipeFreire-gf)  | 23/09/2025 | | | |
+| `1.5` | Inserção das atividades realizadas| [Felipe das Neves](https://github.com/FelipeFreire-gf)  | 23/09/2025 | | | |
