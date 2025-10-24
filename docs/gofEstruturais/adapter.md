@@ -74,7 +74,7 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
     <br>
     <img src="../assets/adapterUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
-    <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
 
@@ -237,47 +237,54 @@ public class LLMConfiguration {
 ##### Imagem do código no VSCODE
 
 As figuras 2, 3, 4, 5 e 6 abaixo ilustram a estrutura das classes do Adapter no ambiente de desenvolvimento VSCode.
-
 <div align="center">
     Figura 2: Interface LLMProvider.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/2196F3/FFFFFF?text=LLMProvider+Interface" width="1000">
+    <img src="assets/img.adapter/LLMProvider.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 3: Classe OpenAIAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF9800/FFFFFF?text=OpenAIAdapter+Class" width="1000">
+    <img src="assets/img.adapter/OpenAIAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 4: Classe MockAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=MockAdapter+Class" width="1000">
+    <img src="assets/img.adapter/MockAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
+
+---
 
 <div align="center">
     Figura 5: Classe GeminiAdapter.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/4CAF50/FFFFFF?text=GeminiAdapter+Class" width="1000">
+    <img src="assets/img.adapter/GeminiAdapter.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
 
+---
+
 <div align="center">
     Figura 6: Classe LLMConfiguration.java
     <br>
-    <img src="https://via.placeholder.com/1000x600/FF5722/FFFFFF?text=LLMConfiguration+Class" width="1000">
+    <img src="assets/img.adapter/LLMConfiguration.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
@@ -400,21 +407,31 @@ class AdapterTest {
 
 
 <b> Autor: </b> Gabriel Lima e Mateus Bastos.
-
 ##### Imagem do código no VSCODE
 
-A figura 7 abaixo ilustra a estrutura da classe AdapterTest.java no ambiente de desenvolvimento VSCode.
+A figura 7 abaixo ilustra a primeira parte da classe AdapterTest.java no ambiente de desenvolvimento VSCode, e a figura 8 a sua continuação.
 
 <div align="center">
-    Figura 7: Classe de Teste AdapterTest.java
+    Figura 7: Classe de Teste AdapterTest.java (Parte 1)
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=AdapterTest+Class" width="1000">
+    <img src="assets/img.adapter/adapterTest1.png" width="1000">
     <br>
     <b>Autor:</b> Gabriel Lima e Mateus Bastos.
     <br>
 </div>
 
 </details>
+
+---
+
+<div align="center">
+    Figura 8: Classe de Teste AdapterTest.java (Parte 2/Continuação)
+    <br>
+    <img src="assets/img.adapter/adapterTest2.png" width="1000">
+    <br>
+    <b>Autor:</b> Gabriel Lima e Mateus Bastos.
+    <br>
+</div>
 
 ## Vídeo Explicação e Execução do Adapter para LLMProvider
 
@@ -471,4 +488,4 @@ A implementação das classes do Adapter utilizando o padrão Adapter atendeu ao
 
 | Versão | Alteração | Responsável | Data |
 | - | - | - | - |
-| 1.0 | Elaboração dos códigos e documentação | Gabriel Lima e Mateus Bastos | 23/10/2025 |
+| 1.0 | Elaboração dos códigos e documentação | Felipe das Neves, Gabriel Lima e Mateus Bastos | 23/10/2025 |
