@@ -56,14 +56,11 @@ No AILinguo, usamos Prototype para **padronizar** a criação de **perfis de usu
 > Diagrama  das classes do Prototype e seu uso no Auth/Facade.
 
 <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/prototype.png"
-     width="1000" alt="Visão geral Prototype" />
+width="1000" alt="Visão geral Prototype" />
 
 **Autores do UML:** [Luiz Henrique Soares](https://github.com/luizh-gsoares) (UML), com revisão de [Arthur Carvalho Leite](https://github.com/arthurlleite).
 
 ---
-
-![Versão Anterior](../assets/gofcodes/PrototypeUML.png)
-**Autores do UML:** [Luiz Henrique Soares](https://github.com/luizh-gsoares) e 
 
 ## Participantes e Mapeamento para o Código
 
@@ -361,4 +358,3 @@ O vídeo 1 abaixo mostra explicação e a execução do Prototype para o Aprende
 | `1.0` | Estrutura inicial e códigos Prototype | [Arthur Carvalho Leite](https://github.com/arthurlleite), [Letícia Monteiro](https://github.com/leticiamonteiroo) | 24/10/2025 |  | |  |
 | `1.1` | Ajustes e Confecção da  UML | [Luiz Henrique Soares](https://github.com/luizh-gsoares) | 24/10/2025 | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 | Ajustes UML |
 | `1.2` | Documentação (texto e organização) | [Emivalto Tavares Junior](https://github.com/EmivaltoJrr), [Samuel Afonso da Silva Santos](https://github.com/SamuelAfonso) | 24/10/2025 | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 | Revisão técnica |
-| `1.3` | Adicionando outras versões da UML | [Letícia Monteiro](https://github.com/leticiamonteiroo) | 24/10/2025 |  |  |  |
