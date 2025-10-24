@@ -39,35 +39,26 @@ Os controllers da aplicação (`AuthController`, `UserProfileController`, `TaskC
 
 Para a construção do padrão Facade, foram utilizados como referência alguns arquivos que serviram como base de estudo. Entre esses arquivos, destacam-se diagramas e outros materiais que auxiliaram na análise e no entendimento da estrutura necessária.
 
-<div align="center">
-    Figura 1 (Facade): Modelagem UML
-    <br>
-    <img src="../assets/img.facade/Fluxo de como a Tarefa funciona entrada e saída.png" alt="Fluxo de como a Tarefa funciona" width="800">
-    <br>
-    <b>Autores:</b> Arthur - Emivalto - Letícia - Luiz - Samuel.
-    <br>
-</div>
+---
+# Fluxo de como a Tarefa funciona
 
-<div align="center">
-    Figura 1 (Facade): Modelagem UML
-    <br>
-    <img src="../assets/img.facade/uml classes explicada do facade.png" alt="UML Classes explicada do facade" width="800">
-    <br>
-    <b>Autores:</b> Arthur - Emivalto - Letícia - Luiz - Samuel.
-    <br>
-</div>
+![UML Fluxo de como a Tarefa funciona](../assets/img.facade/Fluxo%20de%20como%20a%20Tarefa%20funciona%20entrada%20e%20saída.png)
 
-<div align="center">
-    Figura 1 (Facade): Modelagem UML
-    <br>
-    <img src="../assets/img.facade/Uml com o fluxo do usuário facade.png" alt="UML com o fluxo do usuário facade" width="800">
-    <br>
-    <b>Autores:</b> Arthur - Emivalto - Letícia - Luiz - Samuel.
-    <br>
-</div>
+---
 
+# Classes explicada do facade
+
+![UML Classes explicada do facade](../assets/img.facade/uml%20classes%20explicada%20do%20facade.png)
+
+---
+# Fluxo do usuário facade
+
+![UML com o fluxo do usuário facade](../assets/img.facade/Uml%20com%20o%20fluxo%20do%20usuário%20facade.png)
+
+---
 
 [Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
+
 
 
 ## Benefícios e Considerações
