@@ -55,7 +55,8 @@ No AILinguo, usamos Prototype para **padronizar** a criação de **perfis de usu
 > **Figura 1 — Prototype (classes principais)**  
 > Diagrama  das classes do Prototype e seu uso no Auth/Facade.
 
-<img src="../assets/img.prototype/prototype.png" width="1000" alt="Visão geral Prototype" />
+<img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/prototype.png"
+     width="1000" alt="Visão geral Prototype" />
 
 **Autores do UML:** [Luiz Henrique Soares](https://github.com/luizh-gsoares) (UML), com revisão de [Arthur Carvalho Leite](https://github.com/arthurlleite).
 
@@ -116,7 +117,8 @@ public interface Prototype<T> {
 ```
 <div align="center">
   <br>Figura 2: <code>Prototype.java</code><br>
-  <img src="../assets/img.prototype/PrototypeIMG.png" width="1000" alt="Prototype.java" /><br>
+  <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/PrototypeIMG.png"
+     width="1000" alt="Prototype.java" /><br>
 
   <b>Autores:</b> <a href="https://github.com/leticiamonteiroo">Letícia Monteiro</a>, <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a>, <a href="https://github.com/luizh-gsoares">Luiz Henrique Soares</a>, <a href="https://github.com/SamuelAfonso">Samuel Afonso</a>, <a href="https://github.com/EmivaltoJrr">Emivalto Da Costa</a>.
 </div>
@@ -181,7 +183,8 @@ public class UserProfilePrototype implements Prototype<User> {
 ```
 <div align="center">
   <br>Figura 3: <code>UserProfilePrototype.java</code><br>
-  <img src="../assets/img.prototype/UserProfilePrototypeIMG.png" width="1000" alt="UserProfilePrototype.java" /><br>
+  <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/UserProfilePrototypeIMG.png"
+     width="1000" alt="UserProfilePrototype.java" /><br>
 
   <b>Autores:</b> <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a> e <a href="https://github.com/leticiamonteiroo">Letícia Monteiro</a> (código);
   revisão: <a href="https://github.com/luizh-gsoares">Luiz Henrique Soares</a> (UML).
@@ -212,7 +215,8 @@ public class PrototypeRegistry {
 ```
 <div align="center">
   <br>Figura 4: <code>PrototypeRegistry.java</code><br>
-  <img src="../assets/img.prototype/PrototypeRegistryIMG.png" width="1000" alt="PrototypeRegistry.java" /><br>
+  <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/PrototypeRegistryIMG.png"
+     width="1000" alt="PrototypeRegistry.java" /><br>
 
   <b>Autores:</b> <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a> e <a href="https://github.com/leticiamonteiroo">Letícia Monteiro</a> (código);
   revisão: <a href="https://github.com/luizh-gsoares">Luiz Henrique Soares</a> (UML).
@@ -238,7 +242,8 @@ userRepository.save(user);
 ```
 <div align="center">
   <br>Figura 5: <code>AuthService.java</code> (uso do Prototype)<br>
-  <img src="../assets/img.prototype/AuthServiceIMG.png" width="1000" alt="AuthService.java" /><br>
+  <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/AuthServiceIMG.png"
+     width="1000" alt="AuthService.java" /><br>
 
   <b>Autores:</b> <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a> e <a href="https://github.com/leticiamonteiroo">Letícia Monteiro</a> (código);
   documentação: <a href="https://github.com/EmivaltoJrr">Emivalto Jr.</a> e <a href="https://github.com/SamuelAfonso">Samuel Afonso</a>.
@@ -270,7 +275,8 @@ export function cloneProfile(overrides = {}) {
 ```
 <div align="center">
   <br>Figura 6: <code>profilePrototype.js</code><br>
-  <img src="../assets/img.prototype/profilePrototypeIMG.png" width="1000" alt="profilePrototype.js" /><br>
+  <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.prototype/profilePrototypeIMG.png"
+     width="1000" alt="profilePrototype.js" /><br>
 
   <b>Autores:</b> <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a> (apoio front) e <a href="https://github.com/leticiamonteiroo">Letícia Monteiro</a>.
 </div>
@@ -322,13 +328,19 @@ O **Prototype** no AILinguo simplifica e padroniza a criação do **perfil inici
 O vídeo 1 abaixo mostra explicação e a execução do Prototype para o AprendendocomIA
 
 <div align="center">
-    Vídeo 1: Prototype para AprendendocomIA
-    <br>
-    <iframe width="1321" height="743" src="https://youtu.be/Kbd-NaKFBSQ" title="Vídeo — Prototype no AILinguo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   <br>
-    <b>Autor:</b> [Arthur Carvalho Leite](https://github.com/arthurlleite).
-    <br>
+  Vídeo 1: Prototype para AprendendocomIA
+  <br>
+  <iframe width="960" height="540"
+          src="https://www.youtube.com/embed/Kbd-NaKFBSQ"
+          title="Vídeo — Prototype no AILinguo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+  </iframe>
+  <br>
+  <b>Autor:</b> <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a>.
 </div>
+
 
 ---
 
