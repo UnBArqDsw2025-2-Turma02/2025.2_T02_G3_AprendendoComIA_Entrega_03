@@ -6,7 +6,7 @@
 
 | Data       | Início | Término | Local           |
 | ---------- | ------ | ------- | --------------- |
-| 20/10/2025 | 21:00  | 23:35   | Microsoft Teams |
+| 21/10/2025 | 22:33  | 23:35   | Microsoft Teams |
 
 **Redator**: Felipe das Neves 
 
@@ -59,4 +59,4 @@
 
 | Versão | Alteração | Responsável | Data |
 | - | - | - | - |
-| 1.0 | Inserção da ata geral | [Felipe das Neves](https://github.com/FelipeFraire-gf) | 20/10/2025 |
+| 1.0 | Inserção da ata geral | [Felipe das Neves](https://github.com/FelipeFraire-gf) | 21/10/2025 |
