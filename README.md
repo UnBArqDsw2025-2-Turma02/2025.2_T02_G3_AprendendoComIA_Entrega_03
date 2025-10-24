@@ -32,23 +32,19 @@ Diversos aplicativos já exploram esse potencial. O [Duolingo](https://www.duoli
 
 Nesse contexto, o projeto **Aprendendo com IA** busca preencher essa lacuna, oferecendo uma plataforma que combina **gamificação**, **conteúdo adaptativo** e um **tutor de conversação inteligente**, tornando o aprendizado de inglês mais **personalizado, acessível e motivador**.
 
-## Screenshots da Segunda Entrega
+## Screenshots da Terceira Entrega
 
-### Diagrama de Componentes
+### UML Adapter
 
-![componentes](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_02/refs/heads/main/docs/modelagemEstatica/assets/componentes.png)
+![componentes](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png)
 
-<center> Autor(a): <a href="https://github.com/leozinlima" target = "_blank">Gabriel Lima</a>, <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a> e <a href="https://github.com/FelipeFreire-gf" target = "_blank">Mateus Bastos</a></center>
+<center> Autor(a): <a href="https://github.com/gabriel-lima258" target = "_blank">Gabriel Lima</a>, <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a>, <a href="https://github.com/MateuSansetef" target = "_blank">Mateus Bastos</a> e <a href="https://github.com/bessazs" target = "_blank">Vitor Bessa</a></center>
     
-### Diagrama de Atividades
+### UML Singleton
 
-![atividades](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_02/refs/heads/main/docs/modelagemDinamica/assets/geral.png)
-<center> Autor(a):  <a href="https://github.com/leozinlima" target = "_blank">Gabriel Lima</a> e <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a></center>
+![atividades](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/gofcodes/singleton.jpeg)
 
-### Diagrama de Pacotes
-
-![atividades](https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_02/refs/heads/main/docs/ModelagemOrganizacional/assets/pacotes.png)
-<center> Autor(a): <a href="https://github.com/leozinlima" target = "_blank">Gabriel Lima</a> e <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a> </center>
+<center> Autor(a): <a href="https://github.com/gabriel-lima258" target = "_blank">Gabriel Lima</a>, <a href="https://github.com/FelipeFreire-gf" target = "_blank">Felipe das Neves</a>, <a href="https://github.com/MateuSansetef" target = "_blank">Mateus Bastos</a> e <a href="https://github.com/bessazs" target = "_blank">Vitor Bessa</a></center>
 
 
 ## Há algo a ser executado?
@@ -57,31 +53,168 @@ Nesse contexto, o projeto **Aprendendo com IA** busca preencher essa lacuna, ofe
 
 ( ) NÃO
 
-Obs.: O projeto está no mesmo repositório: https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV
+Obs.: O projeto está no mesmo repositório: https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV2
 
-### Opção 1: Acesso Rápido via Docker do nosso Software
+## Início Rápido
+
+### Pré-requisitos
+
+- Docker e Docker Compose
+- OU Java 21+ e Node.js 18+
+
+### Executar com Docker (Recomendado)
+
 ```bash
-# Baixar e rodar o projeto
-unzip ai-linguo.zip && cd ai-linguo
-cp .env.example .env
-docker-compose up --build
+# Clonar repositório
+git clone <repo-url>
+cd 2025.2_T02_G3_AprendendoComIA_DEV
 
-# Acessar: http://localhost:3000
+# Iniciar todos os serviços
+docker-compose -f docker-compose-new.yml up --build
+
+# Acessar:
+# - Frontend: http://localhost:3000
+# - Backend:  http://localhost:8080
 ```
 
-### Opção 2: Repositório GitHub
-```bash
-# Clonar o repositório
-git clone https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV
-cd ai-linguo
+### Executar Localmente
 
-# Configurar e rodar
-cp .env.example .env
-yarn install
-docker-compose up mongo -d
-yarn seed
-yarn dev
+#### Backend
+
+```bash
+cd backend-java
+mvn clean install
+mvn spring-boot:run
 ```
+
+#### Frontend
+
+```bash
+cd frontend-react
+npm install
+npm run dev
+```
+
+---
+
+## Estrutura do Projeto
+
+```
+.
+├── backend-java/          # Backend Spring Boot
+│   ├── src/main/java/
+│   │   └── com/ailinguo/
+│   │       ├── config/
+│   │       ├── controller/
+│   │       ├── dto/
+│   │       ├── model/
+│   │       ├── repository/
+│   │       └── service/
+│   └── pom.xml
+│
+├── frontend-react/        # Frontend React + Vite
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   └── App.jsx
+│   └── package.json
+│
+├── docker-compose-new.yml    # Docker Compose
+├── BUSINESS_RULES.md         # Regras de negócio
+├── MIGRATION_GUIDE.md        # Guia de migração
+└── NEW_PROJECT_README.md     # Docs detalhadas
+```
+
+---
+
+## Documentação
+
+- **[NEW_PROJECT_README.md](./NEW_PROJECT_README.md)** - Documentação completa
+- **[BUSINESS_RULES.md](./BUSINESS_RULES.md)** - Regras de negócio detalhadas
+- **[MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md)** - Guia de migração Next.js → Java/React
+- **[backend-java/README.md](./backend-java/README.md)** - Docs do backend
+- **[frontend-react/README.md](./frontend-react/README.md)** - Docs do frontend
+
+---
+
+## Funcionalidades
+
+### Autenticação
+- Registro e login de usuários
+- JWT em cookie HTTP-only
+- Níveis CEFR (A1-C1)
+
+### Tutor IA
+- Chat interativo com IA
+- Correções gramaticais em tempo real
+- Exercícios personalizados
+- Adaptação ao nível do aluno
+
+### Vocabulário (SRS)
+- Sistema de repetição espaçada
+- Algoritmo de revisão inteligente
+- Cartões por nível CEFR
+
+### Gamificação
+- Ranking de usuários
+- Sistema de XP e níveis
+- Metas semanais
+- Grupos/Times
+- Streaks diários
+
+### Exercícios
+- Quizzes de gramática
+- Feedback imediato
+- Sistema de pontuação
+
+---
+
+## Segurança
+
+- JWT com tokens HTTP-only
+- Senhas com BCrypt
+- Spring Security
+- CORS configurável
+- Validação de entrada
+
+---
+
+## API Endpoints
+
+### Autenticação
+```
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/auth/me
+POST   /api/auth/logout
+```
+
+### Tutor
+```
+POST   /api/tutor
+```
+
+### Vocabulário
+```
+GET    /api/vocabulary/due
+POST   /api/vocabulary/review
+```
+
+### Gamificação
+```
+GET    /api/gamification/leaderboard
+GET    /api/gamification/goals
+GET    /api/gamification/groups
+POST   /api/gamification/groups
+```
+
+### Tarefas
+```
+GET    /api/tasks/quiz
+```
+
+---
 
 ## Informações Complementares 
 

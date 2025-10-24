@@ -72,12 +72,27 @@ Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
 <div align="center">
     Figura 1 (Adapter): Modelagem UML
     <br>
-    <img src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/refs/heads/main/docs/assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="assets/adapterUML.jpeg" alt="Modelagem UML do Adapter para LLMProvider" width="800">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
 
+
+---
+## Vídeo explicação do diagrama UML Adapter
+
+
+<div align="center">
+    Vídeo 2
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/76CuUeb5I2A" title="Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Mateus Bastos.
+    <br>
+</div>
+
+---
 ## Implementação das Classes do Adapter
 
 As classes do Adapter foram implementadas no pacote com.ailinguo.llm para representar o sistema de adaptação de provedores LLM da plataforma. Elas contêm interfaces bem definidas para adaptação, implementações concretas para diferentes provedores, e configuração para seleção dinâmica.
@@ -435,10 +450,10 @@ A figura 7 abaixo ilustra a primeira parte da classe AdapterTest.java no ambient
 
 ## Vídeo Explicação e Execução do Adapter para LLMProvider
 
-O vídeo 1 abaixo mostra explicação e a execução do Adapter para LLMProvider
+O vídeo 2 abaixo mostra explicação e a execução do Adapter para LLMProvider
 
 <div align="center">
-    Vídeo 1: Adapter para LLMProvider
+    Vídeo 2: Adapter para LLMProvider
     <br>
     <iframe width="1321" height="743" src="https://www.youtube.com/embed/tYnxU_JCnv4?si=i2tmRaZbr4bVYgnY" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
@@ -482,14 +497,13 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 
 ---
 
-## Histórico de Versões
-
 ## Histórico de versão
 
-| Versão | Alteração | Responsável | Data |
-| - | - | - | - |
-| 1.0 | Elaboração dos códigos e documentação | Felipe das Neves, Gabriel Lima e Mateus Bastos | 23/10/2025 |
+
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima e Mateus Bastos ]() | 23/10/2025 | | | |
+| `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima, Mateus Bastos, Vitor Bessa e Leonardo de Melo ]() | 23/10/2025 | | | |
 | `1.1` | Complemento nos textos | [Felipe das Neves](FelipeFreire-gf) | 23/10/2025 | | | |
+| `1.2` | Adição do video de explicação e execução | [Vítor Bessa](Bessaz), [Leonardo de Melo]() | 23/10/2025 | | | |
+| `1.3` | Modelagem da UML |  [ Gabriel Lima, Mateus Bastos, Vitor Bessa, Leonardo de Melo  e Felipe das Neves]()| 23/10/2025 | | | |
+

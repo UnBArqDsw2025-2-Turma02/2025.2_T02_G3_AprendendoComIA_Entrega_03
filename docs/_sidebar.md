@@ -21,16 +21,17 @@
 - **Participação dos Integrantes**
   - [Participação](participacaoIntegrantes/integrantes.md)
 
-- **Iniciativas Extras**
-  - [Organização da Equipe](iniciativasExtras/extras.md)
-
 - **Atas**
+ - [Ata Geral](atas/ata5.md)
+
+- **Equipe 1**
   - [Ata 01](atas/ata1.md)
   - [Ata 02](atas/ata2.md)
-  - [Ata 03](atas/ata3.md)
+
+  - **Equipe 2**
   - [Ata 04](atas/ata4.md)
-  - [Ata 05](atas/ata5.md)
-  - [Ata 06](atas/ata6.md)
+  - [Ata 05](atas/ata6.md)
+
 
 
 

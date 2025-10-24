@@ -71,11 +71,28 @@ Abaixo o espaço para o seu diagrama UML para o Iterator do VocabularyWord:
 <div align="center">
     Figura 1 (Iterator): Modelagem UML do Padrão Iterator para VocabularyWord
     <br>
-    <img src="../assets/img.iterator/iteratorUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="assets/img.iterator/iteratorUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
 </div>
+
+
+---
+## Vídeo explicação do diagrama UML Iterator
+
+
+<div align="center">
+    Vídeo 1
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/iCIbbvTkn2o" title="Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Mateus Bastos.
+    <br>
+</div>
+
+---
+
 
 ## Implementação das Classes do Iterator
 
@@ -212,7 +229,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 2: Interface IIterator.java
     <br>
-    <img src="../assets/img.iterator/iteratorIMG.png" width="1000">
+    <img src="assets/img.iterator/iteratorIMG.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
     <br>
@@ -230,7 +247,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 4: Classe VocabularyWordCollection.java
     <br>
-    <img src="../assets/img.iterator/VocabularyWordCollection.png" width="1000">
+    <img src="assets/img.iterator/VocabularyWordCollection.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
@@ -239,7 +256,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Iterator no am
 <div align="center">
     Figura 5: Classe VocabularyWordIterator.java
     <br>
-    <img src="../assets/img.iterator/VocabularyWordIterator.png" width="1000">
+    <img src="assets/img.iterator/VocabularyWordIterator.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
@@ -411,15 +428,14 @@ public class VocabularyIteratorTest {
 
 
 <b> Autores: </b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
-
 ##### Imagem do código no VSCODE
 
-A figura 6 abaixo ilustra a estrutura da classe VocabularyIteratorTest.java no ambiente de desenvolvimento VSCode.
+As figuras 7 e 8 ilustram a estrutura da classe VocabularyIteratorTest.java no ambiente de desenvolvimento VSCode.
 
 <div align="center">
-    Figura 6: Classe de Teste VocabularyIteratorTest.java
+    Figura 7: Classe de Teste VocabularyIteratorTest.java (Parte 1)
     <br>
-    <img src="https://via.placeholder.com/1000x600/9C27B0/FFFFFF?text=VocabularyIteratorTest+Class" width="1000">
+    <img src="assets/img.iterator/iteratorTest1.png" width="1000">
     <br>
     <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
     <br>
@@ -427,12 +443,23 @@ A figura 6 abaixo ilustra a estrutura da classe VocabularyIteratorTest.java no a
 
 </details>
 
-## Vídeo Explicação e Execução do Iterator para VocabularyWord
-
-O vídeo 1 abaixo mostra explicação e a execução do Iterator para VocabularyWord
+---
 
 <div align="center">
-    Vídeo 1: Iterator para VocabularyWord
+    Figura 8: Classe de Teste VocabularyIteratorTest.java (Parte 2/Continuação)
+    <br>
+    <img src="assets/img.iterator/iteratorTest2.png" width="1000">
+    <br>
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus, Vitor, Felipe.
+    <br>
+</div>
+
+## Vídeo Explicação e Execução do Iterator para VocabularyWord
+
+O vídeo 2 abaixo mostra explicação e a execução do Iterator para VocabularyWord
+
+<div align="center">
+    Vídeo 2: Iterator para VocabularyWord
     <br>
     <iframe width="1321" height="743" src="https://www.youtube.com/embed/vim6iAUT1Rw?si=-pIlRTh9z-lVbvDK" title="AILinguo: Explicação e Execução do Iterator para VocabularyWord" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
@@ -478,6 +505,7 @@ A implementação das classes do Iterator utilizando o padrão Iterator atendeu 
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.0` | Elaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.0` | Ajuste imagens dos códigos UML | [Mateus Bastos]() | 22/10/2025 | | | |
+| `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa | 22/10/2025 | | | |
+| `1.1` | Elaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa  | 22/10/2025 | | | |
+| `1.2` | Ajuste imagens dos códigos UML | [Mateus Bastos]() e Felipe das Neves]() | 22/10/2025 | | | |
+| `1.3` | Adição do vídeo de explicação e execução | [Vítor Bessa](Bessazs) | 22/10/2025 | | | |
