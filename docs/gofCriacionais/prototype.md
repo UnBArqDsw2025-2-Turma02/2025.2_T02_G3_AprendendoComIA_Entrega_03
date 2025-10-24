@@ -62,6 +62,9 @@ No AILinguo, usamos Prototype para **padronizar** a criação de **perfis de usu
 
 ---
 
+![Versão Anterior](../assets/gofcodes/PrototypeUML.png)
+**Autores do UML:** [Luiz Henrique Soares](https://github.com/luizh-gsoares) e 
+
 ## Participantes e Mapeamento para o Código
 
 - **Prototype (Interface)** → `backend-java/src/main/java/com/ailinguo/prototype/Prototype.java`  
@@ -358,3 +361,4 @@ O vídeo 1 abaixo mostra explicação e a execução do Prototype para o Aprende
 | `1.0` | Estrutura inicial e códigos Prototype | [Arthur Carvalho Leite](https://github.com/arthurlleite), [Letícia Monteiro](https://github.com/leticiamonteiroo) | 24/10/2025 |  | |  |
 | `1.1` | Ajustes e Confecção da  UML | [Luiz Henrique Soares](https://github.com/luizh-gsoares) | 24/10/2025 | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 | Ajustes UML |
 | `1.2` | Documentação (texto e organização) | [Emivalto Tavares Junior](https://github.com/EmivaltoJrr), [Samuel Afonso da Silva Santos](https://github.com/SamuelAfonso) | 24/10/2025 | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 | Revisão técnica |
+| `1.3` | Adicionando outras versões da UML | [Letícia Monteiro](https://github.com/leticiamonteiroo) | 24/10/2025 |  |  |  |
