@@ -450,10 +450,10 @@ A figura 7 abaixo ilustra a primeira parte da classe AdapterTest.java no ambient
 
 ## Vídeo Explicação e Execução do Adapter para LLMProvider
 
-O vídeo 1 abaixo mostra explicação e a execução do Adapter para LLMProvider
+O vídeo 2 abaixo mostra explicação e a execução do Adapter para LLMProvider
 
 <div align="center">
-    Vídeo 1: Adapter para LLMProvider
+    Vídeo 2: Adapter para LLMProvider
     <br>
     <iframe width="1321" height="743" src="https://www.youtube.com/embed/tYnxU_JCnv4?si=i2tmRaZbr4bVYgnY" title="AILinguo: Explicação e Execução do Adapter para LLMProvider" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    <br>
@@ -496,8 +496,6 @@ A escolha de utilizar o padrão Adapter para a interface LLMProvider foi pondera
 > DEVMEDIA. Padrão de Projeto Adapter em Java. DevMedia, [s.d.]. Disponível em: https://www.devmedia.com.br/padrao-de-projeto-adapter-em-java/26397.
 
 ---
-
-## Histórico de Versões
 
 ## Histórico de versão
 

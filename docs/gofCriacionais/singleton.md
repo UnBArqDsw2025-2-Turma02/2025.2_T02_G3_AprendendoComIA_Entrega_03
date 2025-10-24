@@ -680,6 +680,24 @@ Principais verificações implementadas:
 
 ---
 
+## Vídeo Explicação e Execução do Singleton
+
+O vídeo 2 abaixo mostra explicação e a execução do Adapter para LLMProvider
+
+<div align="center">
+    Vídeo 4
+    <br>
+    <iframe width="1321" height="743" src="https://www.youtube.com/embed/Q5IBWVOkwNs" title="Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <b>Autor:</b> Gabriel Lima.
+    <br>
+</div>
+
+
+
+
+
+---
 ## Vantagens e Desvantagens
 
 ### Vantagens
