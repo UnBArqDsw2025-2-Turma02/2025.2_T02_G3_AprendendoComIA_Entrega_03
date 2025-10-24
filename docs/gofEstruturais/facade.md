@@ -169,7 +169,7 @@ Controllers (`AuthController`, `UserProfileController`, `TaskController`, `Progr
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Documentação e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
-| `1.1` | Adição da implementação específica (AILinguoFacade única), diagrama UML atualizado e seção de Benefícios/Considerações. |  [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 | | | |
-| `1.2` | Adição do diagrama UML | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr)  | 23/10/2025 | | | |
-
+| `1.0` | Documentação inicial e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 |  |  |  |
+| `1.1` | Definição da **Facade única** (AILinguoFacade) e seção de benefícios/considerações | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 |  |  |  |
+| `1.2` | **Criação do UML do Facade** (Figuras 1–3) | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
+| `1.3` | **Atualização do documento**: seção “Figuras (RAW) e Explicações)”, vídeo (SharePoint) e ajustes (padrão Prototype) | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 |  |  |  |
