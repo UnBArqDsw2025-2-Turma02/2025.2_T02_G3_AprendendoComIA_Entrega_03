@@ -1,44 +1,58 @@
-# Facade
+
+# Facade (Padrão Estrutural) – Fachada Única no AILinguo
 
 ---
 ## Sumário
 - [Introdução](#introdução)
+- [Objetivo](#objetivo)
 - [Implementação no Projeto AILinguo](#implementação-no-projeto-ailinguo)
 - [Diagrama UML](#diagrama-uml)
+  - [Figura e Crédito](#figura-e-crédito)
+  - [Figuras (RAW) e Explicações](#figuras-raw-e-explicações)
+- [Participantes e Mapeamento para o Código](#participantes-e-mapeamento-para-o-código)
 - [Benefícios e Considerações](#benefícios-e-considerações)
-- [Referências Bibliográficas](#referencias-bibliográficas)
+- [Vídeo de Apresentação](#vídeo-de-apresentação)
+- [Anexos](#anexos)
+- [Referências Bibliográficas](#referências-bibliográficas)
 - [Histórico de Versões](#histórico-de-versões)
 
 ---
 
 ## Introdução
 
-Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padrão __Facade__ é descrito como uma entidade que fornece uma interface unificada e simplificada para um conjunto de interfaces em um subsistema, facilitando o uso do sistema ao esconder sua complexidade. <br>Basicamente, o __Facade__ atua como uma fachada que oferece uma interface mais fácil de usar permitindo que os clientes interajam com o sistema através de um ponto único de acesso, sem precisar conhecer detalhes internos ou múltiplas interfaces complexas.
+Segundo Eric Freeman, no livro **“Use a Cabeça! Padrões e Projetos”**, o padrão **Facade** fornece uma **interface unificada e simplificada** para um conjunto de interfaces em um subsistema. A Facade atua como uma “fachada” que **esconde a complexidade interna** e **reduz o acoplamento** entre clientes (ex.: controllers) e serviços.
 
-O objetivo principal é reduzir o acoplamento entre os clientes (como controllers) e os subsistemas internos, promovendo uma arquitetura mais organizada e de fácil manutenção.
+## Objetivo
+
+- Expor **um único ponto de entrada** para fluxos funcionais do sistema.
+- **Orquestrar** serviços internos sem que o cliente precise conhecê-los diretamente.
+- **Simplificar** controllers e **aumentar a coesão** de regras de alto nível.
 
 ---
 
 ## Implementação no Projeto AILinguo
 
-No projeto AILinguo, optamos por implementar uma **Facade única**, chamada `AILinguoFacade`, que serve como a principal "porta de entrada" para as funcionalidades essenciais da aplicação. Esta abordagem encapsula a complexidade dos seguintes subsistemas:
+No AILinguo, adotamos **uma Facade única**: `AILinguoFacade`, que implementa a interface `IAILinguoFacade`.  
+Ela orquestra os seguintes subsistemas:
 
-1.  **Autenticação (`AuthService`)**: Gerencia registro, login, logout e informações do usuário autenticado.
-2.  **Perfil e Configurações (`UserSettingsService`)**: Controla dados do perfil, preferências e segurança da conta.
-3.  **Conteúdo de Aprendizado (`TaskService`, `VocabularyController`, `ExerciseController`)**: Oferece acesso a tarefas, vocabulário e exercícios, incluindo recomendações e submissão de respostas. (Idealmente, `VocabularyController` e `ExerciseController` seriam refatorados para `VocabularyService` e `ExerciseService` para melhor separação de camadas).
-4.  **Progresso e Gamificação (`DashboardService`, `GamificationService`)**: Agrega estatísticas de progresso, ranking, metas e conquistas. (`XpService` é usado internamente por esses serviços).
+1. **Autenticação** — `AuthService` (registro, login, logout, usuário autenticado)
+2. **Perfil/Preferências** — `UserSettingsService` (perfil, preferências, troca de senha)
+3. **Aprendizado** — `TaskService`, `VocabularyController*`, `ExerciseController*`  
+   > *Observação:* idealmente os *controllers* seriam refatorados para `VocabularyService` e `ExerciseService`.
+4. **Progresso/Gamificação** — `DashboardService`, `GamificationService` (resumos, histórico, conquistas)
 
-A `AILinguoFacade` (e sua interface opcional `IAILinguoFacade`) expõe métodos simplificados que orquestram chamadas aos serviços subjacentes. Por exemplo, `getUserOverallProgressSummary(userId)` chama `DashboardService`, `GamificationService` e `TaskService` para compilar um resumo completo para o cliente (como um controller).
+Controllers (`AuthController`, `UserProfileController`, `TaskController`, `ProgressController`) **dependem primariamente da Facade**, assim ficam focados em HTTP ↔ DTO, delegando a lógica de negócio à `AILinguoFacade`.
 
-Os controllers da aplicação (`AuthController`, `UserProfileController`, `TaskController`, etc.) agora dependem primariamente da `AILinguoFacade`, reduzindo suas dependências diretas e simplificando sua lógica interna. Isso torna os controllers mais focados em receber requisições HTTP e retornar respostas, delegando a lógica de negócio para a Facade.
+> Commits de referência (exemplo):  
+> <https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV2/commit/47c42d2203c5f6d595257934d04e602a7994d19b#diff-76f9c77ea2d3ec797247eebaa6c3b90117cdb99caafa38c8e57d857e601bed3e>
 
-[Link dos Commits](https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV2/commit/47c42d2203c5f6d595257934d04e602a7994d19b#diff-76f9c77ea2d3ec797247eebaa6c3b90117cdb99caafa38c8e57d857e601bed3e)
-
+---
 
 ## Diagrama UML
 
-Para a construção do padrão Facade, foram utilizados como referência alguns arquivos que serviram como base de estudo. Entre esses arquivos, destacam-se diagramas e outros materiais que auxiliaram na análise e no entendimento da estrutura necessária.
+### Figura e Crédito
 
+> **Fonte/Autoria do UML:** [Arthur Carvalho Leite](https://github.com/arthurlleite).
 ---
 # Fluxo de como a Tarefa funciona
 
@@ -59,36 +73,95 @@ Para a construção do padrão Facade, foram utilizados como referência alguns 
 
 [Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
 
+### Figuras (RAW) e Explicações
 
+> **Nota:** URLs RAW do GitHub evitam que as imagens quebrem em _preview_ e no GitHub Pages.
 
-## Benefícios e Considerações
+#### Figura 1 — Fluxo de como a tarefa funciona (entrada → processamento → saída)
 
-# Benefícios:
+<img
+  width="1000"
+  alt="UML — Fluxo de como a Tarefa funciona (entrada e saída)"
+  src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.facade/Fluxo%20de%20como%20a%20Tarefa%20funciona%20entrada%20e%20sa%C3%ADda.png"
+/>
 
-- Simplificação: Reduz drasticamente a complexidade para os clientes (controllers), que interagem com uma única interface coesa para a maioria das operações.
-
-- Desacoplamento Forte: Isola os controllers das implementações específicas e da quantidade de serviços. Mudanças internas nos serviços (ex: adicionar um StreakService) impactam primariamente a Facade, não os controllers.
-
-- Ponto Central de Orquestração: Facilita a visualização e manutenção da lógica de fluxo de alto nível que envolve múltiplos serviços.
-
-- Melhora a Testabilidade dos Controllers: Controllers podem ser testados mais facilmente mockando apenas a Facade.
-
-# Considerações:
-
-- Potencial "God Class": A AILinguoFacade única pode se tornar muito grande e complexa, centralizando responsabilidades demais e dificultando a manutenção dentro da própria Facade.
-
-- Risco de Acoplamento Interno: Embora desacople os clientes, pode aumentar o acoplamento entre os serviços dentro da Facade se não for bem gerenciada.
-
-- Granularidade: Se a Facade ficar muito grande, pode ser um sinal de que a divisão em Facades menores e mais focadas (por domínio, como UserAccountFacade, LearningActivityFacade, ProgressReportingFacade) seria mais apropriada para manter a coesão e o SRP.
+**Explicação:** o controller chama a **`AILinguoFacade`**, que orquestra `TaskService` (avaliação/submissão), atualiza progresso em `DashboardService/GamificationService` e retorna um **resultado unificado** ao cliente (HTTP/DTO). O cliente não conversa diretamente com cada serviço — somente com a **Fachada**.
 
 ---
 
+#### Figura 2 — Classes explicadas do Facade (visão estática)
 
-## Bibliogaria
+<img
+  width="1000"
+  alt="UML — Classes explicadas do Facade"
+  src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.facade/uml%20classes%20explicada%20do%20facade.png"
+/>
 
-> FREEMAN, Eric et al. Use A Cabeça Padrões e Projetos. Rio de Janeiro: Alta Books, 2007.
+**Explicação:** `IAILinguoFacade` define a **interface pública**; `AILinguoFacade` a **implementa** e **compõe/usa** os serviços: `AuthService`, `UserSettingsService`, `TaskService`, `DashboardService`, `GamificationService` e (por enquanto) `VocabularyController`/`ExerciseController`. Os controllers (`Auth`, `UserProfile`, `Task`, `Progress`) **dependem de `IAILinguoFacade`** (baixo acoplamento).
 
-> GAMMA, E. et al. Padrões de projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2006.
+---
+
+#### Figura 3 — Fluxo do usuário pela Facade
+
+<img
+  width="1000"
+  alt="UML — Fluxo do usuário pela Facade"
+  src="https://raw.githubusercontent.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03/main/docs/assets/img.facade/Uml%20com%20o%20fluxo%20do%20usu%C3%A1rio%20facade.png"
+/>
+
+**Explicação:** o usuário executa ações (registrar/login, iniciar lição, enviar exercício). Cada ação **passa pela Facade**, que orquestra os serviços correspondentes e devolve **respostas agregadas** (ex.: token + resumo do usuário; _dashboard snapshot_; resultado da submissão).
+
+---
+
+## Participantes e Mapeamento para o Código
+
+## Benefícios e Considerações
+
+- **`IAILinguoFacade`** → Interface pública que define as operações expostas.
+- **`AILinguoFacade`** → Implementação concreta; injeta e orquestra os serviços.
+- **Serviços** → `AuthService`, `UserSettingsService`, `TaskService`, `DashboardService`, `GamificationService` e, por ora, `VocabularyController`, `ExerciseController`.
+- **Controllers** → dependem de `IAILinguoFacade` para executar os fluxos.
+
+---
+
+## Benefícios e Considerações
+
+### Benefícios
+- **Simplificação**: controllers interagem com uma **única interface** coesa.
+- **Desacoplamento**: mudanças internas impactam a Facade, **não** os clientes.
+- **Orquestração central**: facilita visualizar e manter fluxos de negócio que envolvem múltiplos serviços.
+- **Testabilidade**: controllers podem ser testados mockando `IAILinguoFacade`.
+
+### Considerações
+- **Risco de “God Class”**: uma única fachada pode ficar grande demais. Quando notar perda de coesão, **quebre por domínio**.
+- **Acoplamento interno**: gerencie bem a dependência entre serviços dentro da Facade (SRP, limites claros).
+- **Granularidade**: avalie fachadas específicas (Account/Learning/Progress) se a interface crescer.
+
+---
+
+## Vídeo de Apresentação
+
+> **Link direto (SharePoint/Stream)** — pode exigir login institucional da UnB:  
+> https://unbbr-my.sharepoint.com/personal/231026859_aluno_unb_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F231026859%5Faluno%5Funb%5Fbr%2FDocuments%2FGrava%C3%A7%C3%B5es%2FReuni%C3%A3o%20com%20Leticia%20Da%20Silva%20Monteiro%2D20251024%5F095116%2DGrava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E416c77bb%2Dbaea%2D44b8%2Db830%2Dfff32e90f23c&isDarkMode=true
+
+**Botão clicável:**  
+[▶️ Assistir ao vídeo (Facade)](https://unbbr-my.sharepoint.com/personal/231026859_aluno_unb_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F231026859%5Faluno%5Funb%5Fbr%2FDocuments%2FGrava%C3%A7%C3%B5es%2FReuni%C3%A3o%20com%20Leticia%20Da%20Silva%20Monteiro%2D20251024%5F095116%2DGrava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E416c77bb%2Dbaea%2D44b8%2Db830%2Dfff32e90f23c&isDarkMode=true)
+
+> *Observação:* Players externos (ex.: `<iframe>`) podem ser bloqueados pelo SharePoint/Stream. Recomendamos usar o link acima.
+---
+
+## Anexos
+
+- **Repositório de Documentação**: <https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_Entrega_03>  
+- **Repositório de Desenvolvimento**: <https://github.com/UnBArqDsw2025-2-Turma02/2025.2_T02_G3_AprendendoComIA_DEV2>  
+- **Materiais de referência**: [Pasta no Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
+
+---
+
+## Referências Bibliográficas
+
+- FREEMAN, Eric et al. **Use A Cabeça! Padrões e Projetos.** Rio de Janeiro: Alta Books, 2007.  
+- GAMMA, E. et al. **Padrões de Projeto: soluções reutilizáveis de software orientado a objetos.** Porto Alegre: Bookman, 2006.
 
 ---
 
@@ -99,5 +172,4 @@ Para a construção do padrão Facade, foram utilizados como referência alguns 
 | `1.0` | Documentação e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
 | `1.1` | Adição da implementação específica (AILinguoFacade única), diagrama UML atualizado e seção de Benefícios/Considerações. |  [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr) | 23/10/2025 | | | |
 | `1.2` | Adição do diagrama UML | [Emivalto Da Costa Tavares Junior](https://github.com/EmivaltoJrr)  | 23/10/2025 | | | |
-
 
