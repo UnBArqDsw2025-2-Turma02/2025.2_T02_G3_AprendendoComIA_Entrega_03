@@ -1,4 +1,4 @@
-# Ata 04
+# Ata Geral
 
 ---
 
@@ -16,6 +16,12 @@
 * ✅  Leonardo de Melo
 * ✅  Gabriel Lima
 * ✅  Mateus Bastos
+* ✅  Arthur Carvalho Leite  
+* ✅  Emivalto da Costa Tavares Junior  
+* ✅  Luiz Henrique Guimarães Soares  
+* ✅  Samuel Afonso da Silva Santos
+* ✅  Letícia da Silva Monteiro  
+* ✅  Vitor Bessa
 
 | Legenda | Presente | Ausente |
 | ------- | -------- | ------- |
@@ -25,21 +31,24 @@
 
 ## Pauta
 
-* Revisão do nosso sistema e adequa-lo para melhor implementar as técnicas propostas.
+* Reunião Geral
+
+* No inicio só tem os participantes Vitor e Leonardo, pos decidiram alinhar algumas coisas antes
  
 ---
 
 ## O que fizemos
 
-* Remodelamos toda nossa aplicação que estava em react+next para react+java
+* Foi explicado a separação em grupos para a realização das atividades como o grupo do Felipe, Leonardo, Mateus e Gabriel começaram os trabalhos antes eles explicaram o que já tinham feito para os outros integrantes na sequência cada grupo se reuniu para modelar suas entregas.
+
+
  
 ---
 
 ## Gravação da Reunião
 
-**Reunião 04**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MfHANLuHIXU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1HejJUH6NT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>Autor: <a href="https://github.com/FelipeFraire-gf">Felipe das Neves</a></p>
 </div>
@@ -50,4 +59,4 @@
 
 | Versão | Alteração | Responsável | Data |
 | - | - | - | - |
-| 1.0 | Inserção da ata 04 | [Felipe das Neves](https://github.com/FelipeFraire-gf) | 20/10/2025 |
+| 1.0 | Inserção da ata geral | [Felipe das Neves](https://github.com/FelipeFraire-gf) | 20/10/2025 |
