@@ -55,6 +55,25 @@ Controllers (`AuthController`, `UserProfileController`, `TaskController`, `Progr
 ### Figura e Crédito
 
 > **Fonte/Autoria do UML:** [Arthur Carvalho Leite](https://github.com/arthurlleite).
+---
+# Fluxo de como a Tarefa funciona
+
+![UML Fluxo de como a Tarefa funciona](../assets/img.facade/Fluxo%20de%20como%20a%20Tarefa%20funciona%20entrada%20e%20saída.png)
+
+---
+
+# Classes explicada do facade
+
+![UML Classes explicada do facade](../assets/img.facade/uml%20classes%20explicada%20do%20facade.png)
+
+---
+# Fluxo do usuário facade
+
+![UML com o fluxo do usuário facade](../assets/img.facade/Uml%20com%20o%20fluxo%20do%20usuário%20facade.png)
+
+---
+
+[Drive](https://drive.google.com/drive/folders/1a6CunBsFcQG4bItTI4N0fUOloQrCj4aP?usp=drive_link)
 
 ### Figuras (RAW) e Explicações
 
@@ -907,6 +926,8 @@ package com.ailinguo.facade;import java.util.HashMap;import com.ailinguo.dto.Use
 ---
 
 ## Participantes e Mapeamento para o Código
+
+## Benefícios e Considerações
 
 - **`IAILinguoFacade`** → Interface pública que define as operações expostas.
 - **`AILinguoFacade`** → Implementação concreta; injeta e orquestra os serviços.
