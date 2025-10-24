@@ -22,6 +22,7 @@ Isso promove um baixo acoplamento, pois o "subject" (Aluno/Pontuação) não pre
 
 ## Diagrama UML
 
+O diagrama UML do padrão Observer demonstra a relação entre o objeto observado (Subject) e seus observadores (Observers)
 ![UML Observer](../assets/gofcodes/UMLObserver.jpg)
 [Letícia Monteiro](https://github.com/LeticiaMonteiroo)
 ---

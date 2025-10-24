@@ -79,6 +79,7 @@ As figuras 2, 3, 4 e 5 abaixo ilustram a estrutura das classes do Prototype no a
 
 ## Diagrama UML
 
+O diagrama UML do padrão Prototype ilustra como o processo de clonagem de objetos é estruturado.
 ![UML Observer](../assets/gofcodes/PrototypeUML.png)
 [Luiz Henrique Soares ](https://github.com/luizh-gsoares) 
 ---
