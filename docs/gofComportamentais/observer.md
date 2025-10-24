@@ -23,6 +23,7 @@ Isso promove um baixo acoplamento, pois o "subject" (Aluno/Pontuação) não pre
 ## Diagrama UML
 
 ![UML Observer](../assets/gofcodes/UMLObserver.jpg)
+[Letícia Monteiro](https://github.com/LeticiaMonteiroo)
 ---
 
 ## Bibliogaria

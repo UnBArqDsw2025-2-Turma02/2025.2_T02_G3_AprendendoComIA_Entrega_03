@@ -17,7 +17,8 @@ Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padr�
 
 ## Diagrama UML
 
-
+![UML Observer](../assets/gofcodes/PrototypeUML.png)
+[Luiz Henrique Soares ](https://github.com/luizh-gsoares) 
 ---
 
 ## Bibliogaria
@@ -33,3 +34,4 @@ Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padr�
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Documentação e formatação da aba | [Samuel Afonso](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
+| `1.1` | Adiciona UML e texto | [Letícia Monteiro](https://github.com/LeticiaMonteiroo) | 23/10/2025 | | | |
