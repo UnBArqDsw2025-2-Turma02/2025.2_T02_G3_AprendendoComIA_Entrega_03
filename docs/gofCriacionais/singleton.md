@@ -57,6 +57,9 @@ Ambas seguem a estrutura clássica: construtor privado, atributo estático priva
 Figura 1 (Singleton clássico): Modelagem UML de Group e JwtUtil
 
 ![UML do Singleton (Group e JwtUtil)](../assets/gofcodes/singleton.jpeg)
+   <br>
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
+    <br>
 
 Descrição do diagrama (resumo):
 
@@ -107,6 +110,8 @@ private Group() {
 }
 ~~~
 
+
+
 3. Método público sincronizado para obter a instância (thread-safe):
 ~~~java
 public static synchronized Group getInstance() {
@@ -115,7 +120,11 @@ public static synchronized Group getInstance() {
     }
     return instancia;
 }
+
 ~~~
+   <br>
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
+    <br>
 
 ### Pontos de atenção
 
@@ -294,7 +303,9 @@ public class Group {
   }
 }
 ~~~
-
+   <br>
+    <b>Autores:</b> Gabriel, Leonardo de Melo, Mateus Bastos, Vitor Bessa, Felipe das Neves.
+    <br><p>
 </details>
 
 <details>
@@ -692,5 +703,5 @@ O AILinguo utiliza o **Singleton clássico** nas classes **`Group`** e **`JwtUti
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.0` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
-| `1.0` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
+| `1.1` | Eaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa, Felipe das Neves]() | 22/10/2025 | | | |
+| `1.2` | Ajuste imagens dos códigos e UML | [ Mateus Bastos](https://github.com/SamuelAfonso) | 22/10/2025 | | | |
