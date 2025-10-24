@@ -70,9 +70,9 @@ A seguir, são detalhadas a modelagem e a implementação das classes do Adapter
 Abaixo o espaço para o seu diagrama UML para o Adapter do LLMProvider:
 
 <div align="center">
-    Figura 1 (Iterator): Modelagem UML do Padrão Iterator para VocabularyWord
+    Figura 1 (Adapter): Modelagem UML
     <br>
-    <img src="../assets/adapterUML.jpeg" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
+    <img src="../assets/adapterUML.png" alt="Modelagem UML do Iterator para VocabularyWord" width="800">
     <br>
     <b>Autores:</b> Gabriel, Leo, Mateus, Vitor, Felipe.
     <br>
@@ -467,8 +467,10 @@ A implementação das classes do Adapter utilizando o padrão Adapter atendeu ao
 
 [5] SPRING FRAMEWORK. Configuration Classes. Spring.io, [s.d.]. Disponível em: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-java-configuration. Acesso em: 27 maio 2025.
 
-## Histórico de versão
+---
 
-| Versão | Alteração | Responsável | Data |
-| - | - | - | - |
-| 1.0 | Elaboração dos códigos e documentação | Gabriel Lima e Mateus Bastos | 23/10/2025 |
+## Histórico de Versões
+
+| Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
+| :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
+| `1.0` | Elaboração dos códigos e documentação | [Gabriel Lima e Mateus Bastos ]() | 23/10/2025 | | | |

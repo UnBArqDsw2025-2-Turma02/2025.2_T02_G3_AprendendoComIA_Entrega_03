@@ -34,4 +34,3 @@ Segundo Eric Freeman, no livro __"Use a Cabeça! Padrões E Projetos"__, o padr�
 
 
 
-
