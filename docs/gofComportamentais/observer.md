@@ -528,19 +528,7 @@ public VocabularyReviewResponse reviewCard(VocabularyReviewRequest request) {
 
 ## Vídeo de Apresentação
 
-<div align="center">
-  Vídeo 1: Observer no AILinguo (explicação do código)
-  <br>
-  <iframe width="960" height="540"
-          src="https://www.youtube.com/embed/qJMkPi1N4uM?si=enDVvo7N70LllYUN"
-          title="Vídeo — Observer no AILinguo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-  </iframe>
-  <br>
-  <b>Autor do vídeo:</b> <a href="https://github.com/arthurlleite">Arthur Carvalho Leite</a>.
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EVhuY7rqSyw?si=Qk_ZsYS7erm5JekR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -557,4 +545,5 @@ public VocabularyReviewResponse reviewCard(VocabularyReviewRequest request) {
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
 | `1.0` | Implementação do padrão Observer no backend + documentação inicial | [Arthur Carvalho Leite](https://github.com/arthurlleite) (docs), [Letícia Monteiro](https://github.com/leticiamonteiroo) e [Luiz Henrique Soares](https://github.com/luizh-gsoares) (código), [Luiz Henrique Soares](https://github.com/luizh-gsoares) (UML) | 24/10/2025 | — | — | — |
 | `1.1` | Ajustes finais, links para o commit e seção de vídeo | [Arthur Carvalho Leite](https://github.com/arthurlleite) | 24/10/2025 | — | — | — |
+| `1.2` | Vídeo de Explicação | [Letícia Monteiro](https://github.com/leticiamonteiroo) | 24/10/2025 | — | — | — |
 
