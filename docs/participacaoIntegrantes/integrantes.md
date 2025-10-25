@@ -112,8 +112,4 @@ Este documento tem como objetivo registrar as principais contribuições de cada
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Modelagem inicial do documento. | [Felipe das Neves](https://github.com/FelipeFreire-gf) | 12/09/2025 | | | |
-| `1.2` | Incersão das atividades realizadas | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 21/09/2025 | | | |
-| `1.3` | Incersão das atividades realizadas | [Arthur Carvalho](https://github.com/arthurlleite)  | 21/09/2025 | | | |
-| `1.4` | Corrigindo links | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 22/09/2025 | | | |
-| `1.5` | Inserção das atividades realizadas| [Felipe das Neves](https://github.com/FelipeFreire-gf)  | 23/09/2025 | | | |
+| `1.0` | Incersão das atividades realizadas | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 24/11/2025 | | | |

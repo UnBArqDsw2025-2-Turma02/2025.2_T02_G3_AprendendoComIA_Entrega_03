@@ -505,7 +505,8 @@ A implementação das classes do Iterator utilizando o padrão Iterator atendeu 
 
 | Versão | Descrição | Autor(es) | Data de Produção | Revisor(es) | Data de Revisão | Incremento do Revisor |
 | :----: | --------- | --------- | :--------------: | ----------- | :-------------: | :-------------------: |
-| `1.0` | Elaboração dos códigos | [Leonardo de Melo, Vitor Bessa | 22/10/2025 | | | |
-| `1.1` | Elaboração da documentação | [Gabriel Lima, Mateus Bastos, Leonardo de Melo, Vitor Bessa  | 22/10/2025 | | | |
-| `1.2` | Ajuste imagens dos códigos UML | [Mateus Bastos]() e Felipe das Neves]() | 22/10/2025 | | | |
+| `1.0` | Elaboração dos códigos | [Leonardo de Melo](https://github.com/leozinlima) e [Vitor Bessa](Bessazs) | 22/10/2025 | | | |
+| `1.1` | Elaboração da documentação | [Gabriel Lima](https://github.com/gabriel-lima258), [Mateus Bastos](https://github.com/MateuSansete), [Leonardo de Melo](https://github.com/leozinlima), [Vitor Bessa](Bessazs)  | 22/10/2025 | | | |
+| `1.2` | Ajuste imagens dos códigos UML | [Mateus Bastos](https://github.com/MateuSansete) e [Felipe das Neves](https://github.com/FelipeFreire-gf) | 22/10/2025 | | | |
 | `1.3` | Adição do vídeo de explicação e execução | [Vítor Bessa](Bessazs) | 22/10/2025 | | | |
+| `1.4` | Corrigindo link quedrados | [Letícia Monteiro](https://github.com/LeticiaMonteiroo)  | 22/10/2025 | | | |
